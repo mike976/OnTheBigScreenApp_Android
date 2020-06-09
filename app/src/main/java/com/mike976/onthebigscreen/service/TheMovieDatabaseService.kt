@@ -6,6 +6,8 @@ import com.example.onthebigscreen.featured.model.Media
 import com.example.onthebigscreen.featured.model.Movie
 import com.example.onthebigscreen.featured.model.TvShow
 import com.example.onthebigscreen.network.*
+import com.mike976.onthebigscreen.network.response.MediaCreditsAPIResponse
+import com.mike976.onthebigscreen.network.response.MediaDetailApiResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -143,6 +145,102 @@ class TheMovieDatabaseService {
             }
 
             override fun onFailure(call: Call<TvShowsApiResponse>, t: Throwable) {
+
+            }
+        })
+
+        return liveData
+    }
+
+    fun getMovieDetail(mediaId: Int): LiveData<ApiResponseMessage<MediaDetailApiResponse>> {
+        val liveData = MutableLiveData<ApiResponseMessage<MediaDetailApiResponse>>()
+
+        api.getMovieDetail(mediaId.toString()).enqueue(object : Callback<MediaDetailApiResponse> {
+            override fun onResponse(
+                call: Call<MediaDetailApiResponse>,
+                apiResponse: Response<MediaDetailApiResponse>
+            ) {
+                if (apiResponse != null && apiResponse.isSuccessful) {
+                    liveData.value =
+                        ApiResponseMessage.success(apiResponse.body()) //retrofit is able to convert response body to gists because the data class uses serializedname atribute to ensure can desrialize josn to data class
+                } else {
+                    liveData.value = ApiResponseMessage.error(ApiError.MOVIEDETAIL, null)
+                }
+            }
+
+            override fun onFailure(call: Call<MediaDetailApiResponse>, t: Throwable) {
+
+            }
+        })
+
+        return liveData
+    }
+
+    fun getTvShowDetail(mediaId: Int): LiveData<ApiResponseMessage<MediaDetailApiResponse>> {
+        val liveData = MutableLiveData<ApiResponseMessage<MediaDetailApiResponse>>()
+
+        api.getTVShowDetail(mediaId.toString()).enqueue(object : Callback<MediaDetailApiResponse> {
+            override fun onResponse(
+                call: Call<MediaDetailApiResponse>,
+                apiResponse: Response<MediaDetailApiResponse>
+            ) {
+                if (apiResponse != null && apiResponse.isSuccessful) {
+                    liveData.value =
+                        ApiResponseMessage.success(apiResponse.body()) //retrofit is able to convert response body to gists because the data class uses serializedname atribute to ensure can desrialize josn to data class
+                } else {
+                    liveData.value = ApiResponseMessage.error(ApiError.TVSHOWDETAIL, null)
+                }
+            }
+
+            override fun onFailure(call: Call<MediaDetailApiResponse>, t: Throwable) {
+
+            }
+        })
+
+        return liveData
+    }
+
+    fun getMovieCredits(mediaId: Int): LiveData<ApiResponseMessage<MediaCreditsAPIResponse>> {
+        val liveData = MutableLiveData<ApiResponseMessage<MediaCreditsAPIResponse>>()
+
+        api.getMovieCredits(mediaId.toString()).enqueue(object : Callback<MediaCreditsAPIResponse> {
+            override fun onResponse(
+                call: Call<MediaCreditsAPIResponse>,
+                apiResponse: Response<MediaCreditsAPIResponse>
+            ) {
+                if (apiResponse != null && apiResponse.isSuccessful) {
+                    liveData.value =
+                        ApiResponseMessage.success(apiResponse.body()) //retrofit is able to convert response body to gists because the data class uses serializedname atribute to ensure can desrialize josn to data class
+                } else {
+                    liveData.value = ApiResponseMessage.error(ApiError.MOVIECREDITS, null)
+                }
+            }
+
+            override fun onFailure(call: Call<MediaCreditsAPIResponse>, t: Throwable) {
+
+            }
+        })
+
+        return liveData
+    }
+
+    fun getTvShowCredits(mediaId: Int): LiveData<ApiResponseMessage<MediaCreditsAPIResponse>> {
+        val liveData = MutableLiveData<ApiResponseMessage<MediaCreditsAPIResponse>>()
+
+        api.getTVShowCredits(mediaId.toString()).enqueue(object : Callback<MediaCreditsAPIResponse> {
+            override fun onResponse(
+                call: Call<MediaCreditsAPIResponse>,
+                apiResponse: Response<MediaCreditsAPIResponse>
+            ) {
+                if (apiResponse != null && apiResponse.isSuccessful) {
+                    liveData.value =
+                        ApiResponseMessage.success(apiResponse.body()) //retrofit is able to convert response body to gists because the data class uses serializedname atribute to ensure can desrialize josn to data class
+                } else {
+                    liveData.value = ApiResponseMessage.error(ApiError.TVSHOWCREDITS, null)
+                }
+            }
+
+            override fun onFailure(call: Call<MediaCreditsAPIResponse>, t: Throwable) {
 
             }
         })
