@@ -32,9 +32,9 @@ open class Media (
 
     open val title: String
         get() {
-            if (_title.isEmpty() || _title == null ) {
+            if (_title.isEmpty()) {
                 return name
-            } else if (name.isEmpty() || name == null ) {
+            } else if (name.isEmpty()) {
                 return _title
             } else {
                 return ""

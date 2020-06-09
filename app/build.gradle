@@ -36,6 +36,10 @@ dependencies {
     //UI
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 
+    // ViewModel and LiveData
+    // https://developer.android.com/jetpack/androidx/releases/lifecycle
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+
     // DAGGER
     // https://github.com/google/dagger
     implementation 'com.google.dagger:dagger:2.24'

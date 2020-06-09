@@ -2,46 +2,55 @@ package com.example.onthebigscreen
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.onthebigscreen.service.TheMovieDatabaseService
+import android.widget.Toast
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
+import com.example.onthebigscreen.featured.model.Movie
+import com.example.onthebigscreen.network.ApiError
+import com.example.onthebigscreen.network.ApiResponseMessage
+import com.example.onthebigscreen.network.ApiResponseStatus
+import com.mike976.onthebigscreen.featured.model.MoviesListType
+import com.mike976.onthebigscreen.featured.viewmodel.IMainViewModel
+import com.mike976.onthebigscreen.featured.viewmodel.MainViewModel
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var service: TheMovieDatabaseService
+    private lateinit var viewModel: IMainViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        service = TheMovieDatabaseService()
+        viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
 
-//        service.getNowPlayingMovies().observe(this, Observer<ApiResponseMessage<List<Movie>>> { responseMessage ->
-//
-//            if(responseMessage?.statusApi == ApiResponseStatus.SUCCESS && responseMessage.data != null) {
-//                val nowPlayingMovies = responseMessage.data
-//
-//                val sb = StringBuilder()
-//                for (movie in nowPlayingMovies) {
-//                    sb.append("${movie.id} ")
-//                    sb.append("${movie.title} ")
-//                    sb.append("${movie.overview} ")
-//                    sb.append("${movie.formattedReleaseDate} ")
-//                    sb.append("${movie.formattedReleaseYear} ")
-//                    sb.append("${movie.posterUrl} ")
-//                    sb.append("${movie.backdropUrl} ")
-//                    sb.append("${movie.voteAverage} ")
-//
-//                    sb.appendln()
-//
-//                }
-//
-//                println(sb.toString())
-//
-//            } else {
-//                if (responseMessage?.error == ApiError.NOW_PLAYING_MOVIES) {
-//                    Toast.makeText(this, "Now Playing movies not found", Toast.LENGTH_SHORT).show()
-//                }
-//            }
-//        })
+        viewModel.getMovies(MoviesListType.UpComingMovies)?.observe(this, Observer<ApiResponseMessage<List<Movie>>> { responseMessage ->
+
+            if(responseMessage?.statusApi == ApiResponseStatus.SUCCESS && responseMessage.data != null) {
+                val movies = responseMessage.data
+
+                val sb = StringBuilder()
+                for (movie in movies) {
+                    sb.append("${movie.id} ")
+                    sb.append("${movie.title} ")
+                    sb.append("${movie.overview} ")
+                    sb.append("${movie.formattedReleaseDate} ")
+                    sb.append("${movie.formattedReleaseYear} ")
+                    sb.append("${movie.posterUrl} ")
+                    sb.append("${movie.backdropUrl} ")
+                    sb.append("${movie.voteAverage} ")
+
+                    sb.appendln()
+
+                }
+
+                println(sb.toString())
+
+            } else {
+                if (responseMessage?.error == ApiError.NOW_PLAYING_MOVIES) {
+                    Toast.makeText(this, "Now Playing movies not found", Toast.LENGTH_SHORT).show()
+                }
+            }
+        })
 
 //        service.getTrendingTvShows().observe(this, Observer<ApiResponseMessage<List<TvShow>>> { responseMessage ->
 //
