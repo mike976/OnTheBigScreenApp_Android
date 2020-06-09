@@ -3,17 +3,23 @@ package com.example.onthebigscreen
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.onthebigscreen.featured.model.Movie
 import com.example.onthebigscreen.network.ApiError
 import com.example.onthebigscreen.network.ApiResponseMessage
 import com.example.onthebigscreen.network.ApiResponseStatus
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.mike976.onthebigscreen.app.component
 import com.mike976.onthebigscreen.featured.model.MoviesListType
+import com.mike976.onthebigscreen.featured.view.AboutFragment
+import com.mike976.onthebigscreen.featured.view.FeaturedFragment
+import com.mike976.onthebigscreen.featured.view.SearchFragment
 import com.mike976.onthebigscreen.featured.viewmodel.IMainViewModel
 import com.mike976.onthebigscreen.featured.viewmodel.MainViewModel
 import com.mike976.onthebigscreen.featured.viewmodel.MainViewModelFactory
+import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
@@ -23,11 +29,35 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var viewModel: MainViewModel
 
+    private val featuredFragment = FeaturedFragment()
+    private val searchFragment = SearchFragment()
+    private val aboutFragment = AboutFragment()
+
+    private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
+        val fragment = when (item.itemId) {
+            R.id.navigation_featured -> featuredFragment
+            R.id.navigation_search -> searchFragment
+            R.id.navigation_about -> aboutFragment
+            else -> FeaturedFragment()
+        }
+        switchToFragment(fragment)
+        true
+    }
+
+    private fun switchToFragment(fragment: Fragment) {
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.main_container, fragment).commit()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         component.inject(this)
+
+        navigation.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
+
+        switchToFragment(featuredFragment)
 
         viewModel = ViewModelProviders.of(this, factory).get(MainViewModel::class.java)
 

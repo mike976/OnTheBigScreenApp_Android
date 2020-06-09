@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">OnTheBigScreen</string>
+    <string name="featured_menu_title">Featured</string>
+    <string name="search_menu_title">Search</string>
+    <string name="about_menu_title">About</string>
 </resources>

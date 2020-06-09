@@ -10,7 +10,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="649627d5-c9d5-44dd-94bc-b6692d9be34b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/featured/viewmodel/MainViewModelFactory.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_asynclayoutinflater_asynclayoutinflater_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_cardview_cardview_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_coordinatorlayout_coordinatorlayout_1_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_documentfile_documentfile_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_legacy_legacy_support_core_ui_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_legacy_legacy_support_core_utils_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_legacy_legacy_support_v4_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_ktx_2_2_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_localbroadcastmanager_localbroadcastmanager_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_media_media_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_print_print_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_recyclerview_recyclerview_1_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_slidingpanelayout_slidingpanelayout_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_swiperefreshlayout_swiperefreshlayout_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_transition_transition_1_2_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_viewpager2_viewpager2_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_material_material_1_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlinx_kotlinx_coroutines_android_1_3_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlinx_kotlinx_coroutines_core_1_3_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/featured/view/AboutFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/featured/view/AboutViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/featured/view/FeaturedFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/featured/view/FeaturedViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/featured/view/MediaListFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/featured/view/MediaListViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/featured/view/SearchFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/featured/view/SearchViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_account_circle_black_24px.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_description_black_24px.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_folder_open_black_24px.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_about.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_featured.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_media_list.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_search.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -21,11 +54,16 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_2_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_2_2_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/featured/viewmodel/MainViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/featured/viewmodel/MainViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/service/TmDbService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/service/TmDbService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,13 +104,20 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
+    <property name="project.structure.last.edited" value="Dependencies" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
       <recent name="com.mike976.onthebigscreen.di" />
       <recent name="com.mike976.onthebigscreen.featured.model" />
       <recent name="com.mike976.onthebigscreen.network.response" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/menu" />
     </key>
   </component>
   <component name="RunManager">
@@ -149,6 +194,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="241" y="166" key="#PSD" timestamp="1591719044112">
+      <screen x="0" y="23" width="1440" height="810" />
+    </state>
+    <state x="241" y="166" key="#PSD/0.23.1440.810@0.23.1440.810" timestamp="1591719044112" />
     <state x="479" y="150" key="#com.intellij.ide.util.MemberChooser" timestamp="1591706646464">
       <screen x="0" y="23" width="1440" height="810" />
     </state>
@@ -161,29 +210,45 @@
       <screen x="0" y="23" width="1440" height="810" />
     </state>
     <state x="428" y="65" width="569" height="685" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.23.1440.810@0.23.1440.810" timestamp="1591713095825" />
+    <state x="304" y="189" key="AndroidCreateResourceDirectoryDialog" timestamp="1591714736239">
+      <screen x="0" y="23" width="1440" height="810" />
+    </state>
+    <state x="304" y="189" key="AndroidCreateResourceDirectoryDialog/0.23.1440.810@0.23.1440.810" timestamp="1591714736239" />
     <state x="304" y="189" key="AndroidCreateResourceFileDialog" timestamp="1591711803003">
       <screen x="0" y="23" width="1440" height="810" />
     </state>
     <state x="304" y="189" key="AndroidCreateResourceFileDialog/0.23.1440.810@0.23.1440.810" timestamp="1591711803003" />
-    <state width="1384" height="324" key="GridCell.Tab.0.bottom" timestamp="1591713248678">
+    <state x="571" y="281" key="AndroidCreateXmlResourceDialog" timestamp="1591714848005">
       <screen x="0" y="23" width="1440" height="810" />
     </state>
-    <state width="1384" height="324" key="GridCell.Tab.0.bottom/0.23.1440.810@0.23.1440.810" timestamp="1591713248678" />
-    <state width="1384" height="324" key="GridCell.Tab.0.center" timestamp="1591713248677">
+    <state x="571" y="281" key="AndroidCreateXmlResourceDialog/0.23.1440.810@0.23.1440.810" timestamp="1591714848005" />
+    <state width="1384" height="324" key="GridCell.Tab.0.bottom" timestamp="1591718950749">
       <screen x="0" y="23" width="1440" height="810" />
     </state>
-    <state width="1384" height="324" key="GridCell.Tab.0.center/0.23.1440.810@0.23.1440.810" timestamp="1591713248677" />
-    <state width="1384" height="324" key="GridCell.Tab.0.left" timestamp="1591713248677">
+    <state width="1384" height="324" key="GridCell.Tab.0.bottom/0.23.1440.810@0.23.1440.810" timestamp="1591718950749" />
+    <state width="1384" height="324" key="GridCell.Tab.0.center" timestamp="1591718950748">
       <screen x="0" y="23" width="1440" height="810" />
     </state>
-    <state width="1384" height="324" key="GridCell.Tab.0.left/0.23.1440.810@0.23.1440.810" timestamp="1591713248677" />
-    <state width="1384" height="324" key="GridCell.Tab.0.right" timestamp="1591713248677">
+    <state width="1384" height="324" key="GridCell.Tab.0.center/0.23.1440.810@0.23.1440.810" timestamp="1591718950748" />
+    <state width="1384" height="324" key="GridCell.Tab.0.left" timestamp="1591718950747">
       <screen x="0" y="23" width="1440" height="810" />
     </state>
-    <state width="1384" height="324" key="GridCell.Tab.0.right/0.23.1440.810@0.23.1440.810" timestamp="1591713248677" />
+    <state width="1384" height="324" key="GridCell.Tab.0.left/0.23.1440.810@0.23.1440.810" timestamp="1591718950747" />
+    <state width="1384" height="324" key="GridCell.Tab.0.right" timestamp="1591718950749">
+      <screen x="0" y="23" width="1440" height="810" />
+    </state>
+    <state width="1384" height="324" key="GridCell.Tab.0.right/0.23.1440.810@0.23.1440.810" timestamp="1591718950749" />
     <state x="352" y="240" key="com.intellij.ide.util.TipDialog" timestamp="1591709253182">
       <screen x="0" y="23" width="1440" height="810" />
     </state>
     <state x="352" y="240" key="com.intellij.ide.util.TipDialog/0.23.1440.810@0.23.1440.810" timestamp="1591709253182" />
+    <state x="369" y="183" width="693" height="488" key="find.popup" timestamp="1591718080773">
+      <screen x="0" y="23" width="1440" height="810" />
+    </state>
+    <state x="369" y="183" width="693" height="488" key="find.popup/0.23.1440.810@0.23.1440.810" timestamp="1591718080773" />
+    <state x="263" y="177" key="psd.add.library.dependency.panel.dimension" timestamp="1591719042209">
+      <screen x="0" y="23" width="1440" height="810" />
+    </state>
+    <state x="263" y="177" key="psd.add.library.dependency.panel.dimension/0.23.1440.810@0.23.1440.810" timestamp="1591719042209" />
   </component>
 </project>
