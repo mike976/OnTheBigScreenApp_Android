@@ -13,28 +13,15 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Inject
 
-class TmDbService : ITmDbService {
+class TmDbService @Inject constructor (private val api: IApiClient): ITmDbService {
 
-    private val IApi: IApiClient
-
-    init {
-
-        val retrofit = providesRetrofit()
-        IApi = retrofit.create(IApiClient::class.java)
-    }
-
-    private fun providesRetrofit(): Retrofit {
-        return Retrofit.Builder()
-            .baseUrl("https://api.themoviedb.org/3/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-    }
 
     override fun getNowPlayingMovies(): LiveData<ApiResponseMessage<List<Movie>>> {
         val liveData = MutableLiveData<ApiResponseMessage<List<Movie>>>()
 
-        IApi.getNowPlayingMovies().enqueue(object : Callback<MoviesApiResponse> {
+        api.getNowPlayingMovies().enqueue(object : Callback<MoviesApiResponse> {
             override fun onResponse(
                 call: Call<MoviesApiResponse>,
                 response: Response<MoviesApiResponse>
@@ -58,7 +45,7 @@ class TmDbService : ITmDbService {
     override fun getUpComingMovies(): LiveData<ApiResponseMessage<List<Movie>>> {
         val liveData = MutableLiveData<ApiResponseMessage<List<Movie>>>()
 
-        IApi.getUpComingMovies().enqueue(object : Callback<MoviesApiResponse> {
+        api.getUpComingMovies().enqueue(object : Callback<MoviesApiResponse> {
             override fun onResponse(
                 call: Call<MoviesApiResponse>,
                 response: Response<MoviesApiResponse>
@@ -83,7 +70,7 @@ class TmDbService : ITmDbService {
     override fun getTrendingMovies(): LiveData<ApiResponseMessage<List<Movie>>> {
         val liveData = MutableLiveData<ApiResponseMessage<List<Movie>>>()
 
-        IApi.getTrendingMovies().enqueue(object : Callback<MoviesApiResponse> {
+        api.getTrendingMovies().enqueue(object : Callback<MoviesApiResponse> {
             override fun onResponse(
                 call: Call<MoviesApiResponse>,
                 response: Response<MoviesApiResponse>
@@ -107,7 +94,7 @@ class TmDbService : ITmDbService {
     override fun getSearchMovies(searchText: String): LiveData<ApiResponseMessage<List<Media>>> {
         val liveData = MutableLiveData<ApiResponseMessage<List<Media>>>()
 
-        IApi.getSearchMovies(searchText).enqueue(object : Callback<MediaApiResponse> {
+        api.getSearchMovies(searchText).enqueue(object : Callback<MediaApiResponse> {
             override fun onResponse(
                 call: Call<MediaApiResponse>,
                 response: Response<MediaApiResponse>
@@ -131,7 +118,7 @@ class TmDbService : ITmDbService {
     override fun getTrendingTvShows(): LiveData<ApiResponseMessage<List<TvShow>>> {
         val liveData = MutableLiveData<ApiResponseMessage<List<TvShow>>>()
 
-        IApi.getTrendingTvShows().enqueue(object : Callback<TvShowsApiResponse> {
+        api.getTrendingTvShows().enqueue(object : Callback<TvShowsApiResponse> {
             override fun onResponse(
                 call: Call<TvShowsApiResponse>,
                 apiResponse: Response<TvShowsApiResponse>
@@ -155,7 +142,7 @@ class TmDbService : ITmDbService {
     override fun getMovieDetail(mediaId: Int): LiveData<ApiResponseMessage<MediaDetailApiResponse>> {
         val liveData = MutableLiveData<ApiResponseMessage<MediaDetailApiResponse>>()
 
-        IApi.getMovieDetail(mediaId.toString()).enqueue(object : Callback<MediaDetailApiResponse> {
+        api.getMovieDetail(mediaId.toString()).enqueue(object : Callback<MediaDetailApiResponse> {
             override fun onResponse(
                 call: Call<MediaDetailApiResponse>,
                 apiResponse: Response<MediaDetailApiResponse>
@@ -179,7 +166,7 @@ class TmDbService : ITmDbService {
     override fun getTvShowDetail(mediaId: Int): LiveData<ApiResponseMessage<MediaDetailApiResponse>> {
         val liveData = MutableLiveData<ApiResponseMessage<MediaDetailApiResponse>>()
 
-        IApi.getTVShowDetail(mediaId.toString()).enqueue(object : Callback<MediaDetailApiResponse> {
+        api.getTVShowDetail(mediaId.toString()).enqueue(object : Callback<MediaDetailApiResponse> {
             override fun onResponse(
                 call: Call<MediaDetailApiResponse>,
                 apiResponse: Response<MediaDetailApiResponse>
@@ -203,7 +190,7 @@ class TmDbService : ITmDbService {
     override fun getMovieCredits(mediaId: Int): LiveData<ApiResponseMessage<MediaCreditsAPIResponse>> {
         val liveData = MutableLiveData<ApiResponseMessage<MediaCreditsAPIResponse>>()
 
-        IApi.getMovieCredits(mediaId.toString()).enqueue(object : Callback<MediaCreditsAPIResponse> {
+        api.getMovieCredits(mediaId.toString()).enqueue(object : Callback<MediaCreditsAPIResponse> {
             override fun onResponse(
                 call: Call<MediaCreditsAPIResponse>,
                 apiResponse: Response<MediaCreditsAPIResponse>
@@ -227,7 +214,7 @@ class TmDbService : ITmDbService {
     override fun getTvShowCredits(mediaId: Int): LiveData<ApiResponseMessage<MediaCreditsAPIResponse>> {
         val liveData = MutableLiveData<ApiResponseMessage<MediaCreditsAPIResponse>>()
 
-        IApi.getTVShowCredits(mediaId.toString()).enqueue(object : Callback<MediaCreditsAPIResponse> {
+        api.getTVShowCredits(mediaId.toString()).enqueue(object : Callback<MediaCreditsAPIResponse> {
             override fun onResponse(
                 call: Call<MediaCreditsAPIResponse>,
                 apiResponse: Response<MediaCreditsAPIResponse>

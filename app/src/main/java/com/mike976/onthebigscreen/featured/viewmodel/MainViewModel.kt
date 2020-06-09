@@ -12,10 +12,9 @@ import com.example.onthebigscreen.service.TmDbService
 import com.mike976.onthebigscreen.featured.model.MoviesListType
 import com.mike976.onthebigscreen.network.response.MediaCreditsAPIResponse
 import com.mike976.onthebigscreen.network.response.MediaDetailApiResponse
+import javax.inject.Inject
 
-class MainViewModel : ViewModel(), IMainViewModel {
-
-    private val service: ITmDbService = TmDbService()
+class MainViewModel (private val service: ITmDbService) : ViewModel(), IMainViewModel {
 
     override fun getMovies(moviesListType: MoviesListType) : LiveData<ApiResponseMessage<List<Movie>>>? {
 

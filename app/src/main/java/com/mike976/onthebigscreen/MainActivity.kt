@@ -9,19 +9,27 @@ import com.example.onthebigscreen.featured.model.Movie
 import com.example.onthebigscreen.network.ApiError
 import com.example.onthebigscreen.network.ApiResponseMessage
 import com.example.onthebigscreen.network.ApiResponseStatus
+import com.mike976.onthebigscreen.app.component
 import com.mike976.onthebigscreen.featured.model.MoviesListType
 import com.mike976.onthebigscreen.featured.viewmodel.IMainViewModel
 import com.mike976.onthebigscreen.featured.viewmodel.MainViewModel
+import com.mike976.onthebigscreen.featured.viewmodel.MainViewModelFactory
+import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var viewModel: IMainViewModel
+    @Inject
+    lateinit var factory: MainViewModelFactory
+
+    private lateinit var viewModel: MainViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
+        component.inject(this)
+
+        viewModel = ViewModelProviders.of(this, factory).get(MainViewModel::class.java)
 
         viewModel.getMovies(MoviesListType.UpComingMovies)?.observe(this, Observer<ApiResponseMessage<List<Movie>>> { responseMessage ->
 
