@@ -1,4 +1,4 @@
-package com.mike976.onthebigscreen.featured.model
+package com.mike976.onthebigscreen.model
 
 data class Trailer(val key:String?) {
 

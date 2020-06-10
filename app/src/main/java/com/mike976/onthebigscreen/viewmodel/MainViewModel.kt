@@ -1,4 +1,4 @@
-package com.mike976.onthebigscreen.featured.viewmodel
+package com.mike976.onthebigscreen.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
@@ -8,13 +8,13 @@ import com.example.onthebigscreen.featured.model.Movie
 import com.example.onthebigscreen.featured.model.TvShow
 import com.example.onthebigscreen.network.ApiResponseMessage
 import com.example.onthebigscreen.service.ITmDbService
-import com.example.onthebigscreen.service.TmDbService
-import com.mike976.onthebigscreen.featured.model.MoviesListType
+import com.mike976.onthebigscreen.model.MoviesListType
 import com.mike976.onthebigscreen.network.response.MediaCreditsAPIResponse
 import com.mike976.onthebigscreen.network.response.MediaDetailApiResponse
-import javax.inject.Inject
 
 class MainViewModel (private val service: ITmDbService) : ViewModel(), IMainViewModel {
+
+    var counter = 0
 
     override fun getMovies(moviesListType: MoviesListType) : LiveData<ApiResponseMessage<List<Movie>>>? {
 

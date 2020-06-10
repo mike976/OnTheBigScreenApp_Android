@@ -1,4 +1,4 @@
-package com.mike976.onthebigscreen.featured.viewmodel
+package com.mike976.onthebigscreen.viewmodel
 
 import androidx.lifecycle.LiveData
 import com.example.onthebigscreen.featured.model.Media
@@ -6,7 +6,7 @@ import com.example.onthebigscreen.featured.model.MediaType
 import com.example.onthebigscreen.featured.model.Movie
 import com.example.onthebigscreen.featured.model.TvShow
 import com.example.onthebigscreen.network.ApiResponseMessage
-import com.mike976.onthebigscreen.featured.model.MoviesListType
+import com.mike976.onthebigscreen.model.MoviesListType
 import com.mike976.onthebigscreen.network.response.MediaCreditsAPIResponse
 import com.mike976.onthebigscreen.network.response.MediaDetailApiResponse
 

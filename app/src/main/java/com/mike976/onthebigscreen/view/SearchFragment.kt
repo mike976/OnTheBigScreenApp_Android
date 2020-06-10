@@ -1,4 +1,4 @@
-package com.mike976.onthebigscreen.featured.view
+package com.mike976.onthebigscreen.view
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -7,26 +7,29 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.onthebigscreen.R
+import com.mike976.onthebigscreen.viewmodel.MainViewModel
 
-class MediaListFragment : Fragment() {
+class SearchFragment : Fragment() {
 
     companion object {
-        fun newInstance() = MediaListFragment()
+        fun newInstance() = SearchFragment()
     }
 
-    private lateinit var viewModel: MediaListViewModel
+    private lateinit var viewModel: MainViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_media_list, container, false)
+        return inflater.inflate(R.layout.fragment_search, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(MediaListViewModel::class.java)
 
+        viewModel = activity?.let { ViewModelProviders.of(it).get(MainViewModel::class.java) }!!
+
+        viewModel.counter++
     }
 
 }

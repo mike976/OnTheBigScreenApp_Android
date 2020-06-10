@@ -12,13 +12,12 @@ import com.example.onthebigscreen.network.ApiResponseMessage
 import com.example.onthebigscreen.network.ApiResponseStatus
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.mike976.onthebigscreen.app.component
-import com.mike976.onthebigscreen.featured.model.MoviesListType
-import com.mike976.onthebigscreen.featured.view.AboutFragment
-import com.mike976.onthebigscreen.featured.view.FeaturedFragment
-import com.mike976.onthebigscreen.featured.view.SearchFragment
-import com.mike976.onthebigscreen.featured.viewmodel.IMainViewModel
-import com.mike976.onthebigscreen.featured.viewmodel.MainViewModel
-import com.mike976.onthebigscreen.featured.viewmodel.MainViewModelFactory
+import com.mike976.onthebigscreen.model.MoviesListType
+import com.mike976.onthebigscreen.view.AboutFragment
+import com.mike976.onthebigscreen.view.FeaturedFragment
+import com.mike976.onthebigscreen.view.SearchFragment
+import com.mike976.onthebigscreen.viewmodel.MainViewModel
+import com.mike976.onthebigscreen.viewmodel.MainViewModelFactory
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
@@ -29,7 +28,8 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var viewModel: MainViewModel
 
-    private val featuredFragment = FeaturedFragment()
+    private val featuredFragment =
+        FeaturedFragment()
     private val searchFragment = SearchFragment()
     private val aboutFragment = AboutFragment()
 
@@ -61,34 +61,35 @@ class MainActivity : AppCompatActivity() {
 
         viewModel = ViewModelProviders.of(this, factory).get(MainViewModel::class.java)
 
-        viewModel.getMovies(MoviesListType.UpComingMovies)?.observe(this, Observer<ApiResponseMessage<List<Movie>>> { responseMessage ->
 
-            if(responseMessage?.statusApi == ApiResponseStatus.SUCCESS && responseMessage.data != null) {
-                val movies = responseMessage.data
-
-                val sb = StringBuilder()
-                for (movie in movies) {
-                    sb.append("${movie.id} ")
-                    sb.append("${movie.title} ")
-                    sb.append("${movie.overview} ")
-                    sb.append("${movie.formattedReleaseDate} ")
-                    sb.append("${movie.formattedReleaseYear} ")
-                    sb.append("${movie.posterUrl} ")
-                    sb.append("${movie.backdropUrl} ")
-                    sb.append("${movie.voteAverage} ")
-
-                    sb.appendln()
-
-                }
-
-                println(sb.toString())
-
-            } else {
-                if (responseMessage?.error == ApiError.NOW_PLAYING_MOVIES) {
-                    Toast.makeText(this, "Now Playing movies not found", Toast.LENGTH_SHORT).show()
-                }
-            }
-        })
+//        viewModel.getMovies(MoviesListType.UpComingMovies)?.observe(this, Observer<ApiResponseMessage<List<Movie>>> { responseMessage ->
+//
+//            if(responseMessage?.statusApi == ApiResponseStatus.SUCCESS && responseMessage.data != null) {
+//                val movies = responseMessage.data
+//
+//                val sb = StringBuilder()
+//                for (movie in movies) {
+//                    sb.append("${movie.id} ")
+//                    sb.append("${movie.title} ")
+//                    sb.append("${movie.overview} ")
+//                    sb.append("${movie.formattedReleaseDate} ")
+//                    sb.append("${movie.formattedReleaseYear} ")
+//                    sb.append("${movie.posterUrl} ")
+//                    sb.append("${movie.backdropUrl} ")
+//                    sb.append("${movie.voteAverage} ")
+//
+//                    sb.appendln()
+//
+//                }
+//
+//                println(sb.toString())
+//
+//            } else {
+//                if (responseMessage?.error == ApiError.NOW_PLAYING_MOVIES) {
+//                    Toast.makeText(this, "Now Playing movies not found", Toast.LENGTH_SHORT).show()
+//                }
+//            }
+//        })
 
 //        service.getTrendingTvShows().observe(this, Observer<ApiResponseMessage<List<TvShow>>> { responseMessage ->
 //

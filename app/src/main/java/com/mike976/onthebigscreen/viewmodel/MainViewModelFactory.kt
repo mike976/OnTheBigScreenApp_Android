@@ -1,4 +1,4 @@
-package com.mike976.onthebigscreen.featured.viewmodel
+package com.mike976.onthebigscreen.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

@@ -1,4 +1,4 @@
-package com.mike976.onthebigscreen.featured.view
+package com.mike976.onthebigscreen.view
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -7,33 +7,30 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.onthebigscreen.R
-import kotlinx.android.synthetic.main.fragment_featured.*
+import com.mike976.onthebigscreen.viewmodel.MainViewModel
 
-class FeaturedFragment : Fragment() {
+class MediaListFragment : Fragment() {
 
     companion object {
-        fun newInstance() = FeaturedFragment()
+        fun newInstance() = MediaListFragment()
     }
 
-    private lateinit var viewModel: FeaturedViewModel
+    private lateinit var viewModel: MainViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_featured, container, false)
+        return inflater.inflate(R.layout.fragment_media_list, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(FeaturedViewModel::class.java)
+        viewModel = activity?.let { ViewModelProviders.of(it).get(MainViewModel::class.java) }!!
 
-        mediaListButton.setOnClickListener {
-
-        }
+        viewModel.counter++
 
 
     }
-
 
 }

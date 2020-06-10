@@ -1,4 +1,4 @@
-package com.mike976.onthebigscreen.featured.view
+package com.mike976.onthebigscreen.view
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.onthebigscreen.R
+import com.mike976.onthebigscreen.viewmodel.AboutViewModel
 
 class AboutFragment : Fragment() {
 
