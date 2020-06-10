@@ -1,4 +1,4 @@
-package com.mike976.onthebigscreen.view
+package com.mike976.onthebigscreen.view.fragment
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -12,7 +12,8 @@ import com.mike976.onthebigscreen.viewmodel.MainViewModel
 class SearchFragment : Fragment() {
 
     companion object {
-        fun newInstance() = SearchFragment()
+        fun newInstance() =
+            SearchFragment()
     }
 
     private lateinit var viewModel: MainViewModel

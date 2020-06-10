@@ -1,21 +1,14 @@
 package com.example.onthebigscreen
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import com.example.onthebigscreen.featured.model.Movie
-import com.example.onthebigscreen.network.ApiError
-import com.example.onthebigscreen.network.ApiResponseMessage
-import com.example.onthebigscreen.network.ApiResponseStatus
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.mike976.onthebigscreen.app.component
-import com.mike976.onthebigscreen.model.MoviesListType
-import com.mike976.onthebigscreen.view.AboutFragment
-import com.mike976.onthebigscreen.view.FeaturedFragment
-import com.mike976.onthebigscreen.view.SearchFragment
+import com.mike976.onthebigscreen.view.fragment.AboutFragment
+import com.mike976.onthebigscreen.view.fragment.FeaturedFragment
+import com.mike976.onthebigscreen.view.fragment.SearchFragment
 import com.mike976.onthebigscreen.viewmodel.MainViewModel
 import com.mike976.onthebigscreen.viewmodel.MainViewModelFactory
 import kotlinx.android.synthetic.main.activity_main.*
@@ -30,8 +23,10 @@ class MainActivity : AppCompatActivity() {
 
     private val featuredFragment =
         FeaturedFragment()
-    private val searchFragment = SearchFragment()
-    private val aboutFragment = AboutFragment()
+    private val searchFragment =
+        SearchFragment()
+    private val aboutFragment =
+        AboutFragment()
 
     private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         val fragment = when (item.itemId) {
@@ -53,6 +48,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        try {
+            this.supportActionBar!!.hide()
+        } catch (e: NullPointerException) {
+        }
+
         component.inject(this)
 
         navigation.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
@@ -62,121 +62,6 @@ class MainActivity : AppCompatActivity() {
         viewModel = ViewModelProviders.of(this, factory).get(MainViewModel::class.java)
 
 
-//        viewModel.getMovies(MoviesListType.UpComingMovies)?.observe(this, Observer<ApiResponseMessage<List<Movie>>> { responseMessage ->
-//
-//            if(responseMessage?.statusApi == ApiResponseStatus.SUCCESS && responseMessage.data != null) {
-//                val movies = responseMessage.data
-//
-//                val sb = StringBuilder()
-//                for (movie in movies) {
-//                    sb.append("${movie.id} ")
-//                    sb.append("${movie.title} ")
-//                    sb.append("${movie.overview} ")
-//                    sb.append("${movie.formattedReleaseDate} ")
-//                    sb.append("${movie.formattedReleaseYear} ")
-//                    sb.append("${movie.posterUrl} ")
-//                    sb.append("${movie.backdropUrl} ")
-//                    sb.append("${movie.voteAverage} ")
-//
-//                    sb.appendln()
-//
-//                }
-//
-//                println(sb.toString())
-//
-//            } else {
-//                if (responseMessage?.error == ApiError.NOW_PLAYING_MOVIES) {
-//                    Toast.makeText(this, "Now Playing movies not found", Toast.LENGTH_SHORT).show()
-//                }
-//            }
-//        })
-
-//        service.getTrendingTvShows().observe(this, Observer<ApiResponseMessage<List<TvShow>>> { responseMessage ->
-//
-//            if(responseMessage?.statusApi == ApiResponseStatus.SUCCESS && responseMessage.data != null) {
-//                val trendingTvShows = responseMessage.data
-//
-//                val sb = StringBuilder()
-//                for (movie in trendingTvShows) {
-//                    sb.append("${movie.id} ")
-//                    sb.append("${movie.title} ")
-//                    sb.append("${movie.overview} ")
-//                    sb.append("${movie.formattedReleaseDate} ")
-//                    sb.append("${movie.formattedReleaseYear} ")
-//                    sb.append("${movie.posterUrl} ")
-//                    sb.append("${movie.backdropUrl} ")
-//                    sb.append("${movie.voteAverage} ")
-//
-//                    sb.appendln()
-//
-//                }
-//
-//                println(sb.toString())
-//
-//            } else {
-//                if (responseMessage?.error == ApiError.TRENDING_TVSHOWS) {
-//                    Toast.makeText(this, "Now Playing movies not found", Toast.LENGTH_SHORT).show()
-//                }
-//            }
-//        })
-
-//        service.getUpComingMovies().observe(this, Observer<ApiResponseMessage<List<Movie>>> { responseMessage ->
-//
-//            if(responseMessage?.statusApi == ApiResponseStatus.SUCCESS && responseMessage.data != null) {
-//                val upComingMovies = responseMessage.data
-//
-//                val sb = StringBuilder()
-//                for (movie in upComingMovies) {
-//                    sb.append("${movie.id} ")
-//                    sb.append("${movie.title} ")
-//                    sb.append("${movie.overview} ")
-//                    sb.append("${movie.formattedReleaseDate} ")
-//                    sb.append("${movie.formattedReleaseYear} ")
-//                    sb.append("${movie.posterUrl} ")
-//                    sb.append("${movie.backdropUrl} ")
-//                    sb.append("${movie.voteAverage} ")
-//
-//                    sb.appendln()
-//
-//                }
-//
-//                println(sb.toString())
-//
-//            } else {
-//                if (responseMessage?.error == ApiError.UPCOMING_MOVIES) {
-//                    Toast.makeText(this, "Now Playing movies not found", Toast.LENGTH_SHORT).show()
-//                }
-//            }
-//        })
-
-//        service.getTrendingMovies().observe(this, Observer<ApiResponseMessage<List<Movie>>> { responseMessage ->
-//
-//            if(responseMessage?.statusApi == ApiResponseStatus.SUCCESS && responseMessage.data != null) {
-//                val trendingMoviews = responseMessage.data
-//
-//                val sb = StringBuilder()
-//                for (movie in trendingMoviews) {
-//                    sb.append("${movie.id} ")
-//                    sb.append("${movie.title} ")
-//                    sb.append("${movie.overview} ")
-//                    sb.append("${movie.formattedReleaseDate} ")
-//                    sb.append("${movie.formattedReleaseYear} ")
-//                    sb.append("${movie.posterUrl} ")
-//                    sb.append("${movie.backdropUrl} ")
-//                    sb.append("${movie.voteAverage} ")
-//
-//                    sb.appendln()
-//
-//                }
-//
-//                println(sb.toString())
-//
-//            } else {
-//                if (responseMessage?.error == ApiError.TRENDING_MOVIES) {
-//                    Toast.makeText(this, "Now Playing movies not found", Toast.LENGTH_SHORT).show()
-//                }
-//            }
-//        })
 
 //        service.getSearchMovies("Star").observe(this, Observer<ApiResponseMessage<List<Media>>> { responseMessage ->
 //

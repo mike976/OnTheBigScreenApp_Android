@@ -3,4 +3,7 @@
     <string name="featured_menu_title">Featured</string>
     <string name="search_menu_title">Search</string>
     <string name="about_menu_title">About</string>
+    <string name="content_description_featured_header_image">featured_header_image</string>
+    <string name="featured_header_button_content_description">featured Header Button Description</string>
+    <string name="media_image_content_description">media poster</string>
 </resources>
