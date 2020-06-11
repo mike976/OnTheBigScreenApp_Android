@@ -15,6 +15,7 @@ import com.example.onthebigscreen.featured.model.TvShow
 import com.example.onthebigscreen.network.ApiError
 import com.example.onthebigscreen.network.ApiResponseMessage
 import com.example.onthebigscreen.network.ApiResponseStatus
+import com.mike976.onthebigscreen.model.FeaturedCategory
 import com.mike976.onthebigscreen.model.MoviesListType
 import com.mike976.onthebigscreen.viewmodel.MainViewModel
 import kotlinx.android.synthetic.main.fragment_featured.*
@@ -33,7 +34,7 @@ class FeaturedFragment : Fragment() {
     private lateinit var viewModel: MainViewModel
 
     private val mediaListFragment =
-        MediaListFragment()
+        MediaListFragment(FeaturedCategory.Unknown)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -54,7 +55,11 @@ class FeaturedFragment : Fragment() {
         featuredRecyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         featuredRecyclerView.adapter = featuredAdapter
 
-        featuredAdapter.updateCategories(listOf("Now Playing", "Upcoming", "Trending Movies", "Trending TV"))
+        featuredAdapter.updateCategories(listOf(
+            FeaturedCategory.NowPlaying,
+            FeaturedCategory.Upcoming,
+            FeaturedCategory.TrendingMovies,
+            FeaturedCategory.TrendingTv))
 
         viewModel.getMovies(MoviesListType.NowPlayingMovies)?.observe(this, Observer<ApiResponseMessage<List<Movie>>> { responseMessage ->
 

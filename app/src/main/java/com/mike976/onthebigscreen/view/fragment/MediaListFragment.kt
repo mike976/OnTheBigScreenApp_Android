@@ -7,13 +7,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.onthebigscreen.R
+import com.example.onthebigscreen.featured.model.Media
+import com.mike976.onthebigscreen.model.FeaturedCategory
 import com.mike976.onthebigscreen.viewmodel.MainViewModel
 
-class MediaListFragment : Fragment() {
+class MediaListFragment(val featuredCategory: FeaturedCategory) : Fragment() {
 
     companion object {
         fun newInstance() =
-            MediaListFragment()
+            MediaListFragment(FeaturedCategory.Unknown)
     }
 
     private lateinit var viewModel: MainViewModel
@@ -30,6 +32,8 @@ class MediaListFragment : Fragment() {
         viewModel = activity?.let { ViewModelProviders.of(it).get(MainViewModel::class.java) }!!
 
         viewModel.counter++
+
+        println("Mike ${this.featuredCategory}")
 
 
     }

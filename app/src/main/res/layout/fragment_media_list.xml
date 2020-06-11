@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.mike976.onthebigscreen.view.fragment.MediaListFragment">
+    tools:context="com.mike976.onthebigscreen.view.fragment.MediaListFragment"
+    android:background="@android:color/white">
 
     <TextView
         android:layout_width="match_parent"

@@ -1,8 +1,8 @@
 package com.mike976.onthebigscreen.view.fragment
 
-import android.media.tv.TvInputService
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.RecyclerView
@@ -11,10 +11,12 @@ import com.example.onthebigscreen.featured.model.Media
 import com.example.onthebigscreen.featured.model.Movie
 import com.example.onthebigscreen.featured.model.TvShow
 import com.mike976.onthebigscreen.extensions.inflate
+import com.mike976.onthebigscreen.model.FeaturedCategory
 import kotlinx.android.synthetic.main.list_item_featured_media.view.*
 
+
 class FeaturedAdapter(
-    val featuredCategories: MutableList<String>) : RecyclerView.Adapter<FeaturedAdapter.ViewHolder>() {
+    val featuredCategories: MutableList<FeaturedCategory>) : RecyclerView.Adapter<FeaturedAdapter.ViewHolder>() {
 
     private val viewPool = RecyclerView.RecycledViewPool()
     private val featuredNowPlayingMovies = mutableListOf<Movie>()
@@ -22,13 +24,22 @@ class FeaturedAdapter(
     private val featuredTrendingMovies = mutableListOf<Movie>()
     private val featuredTrendingTvShows= mutableListOf<TvShow>()
 
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         private val featuredCategoryAdapter = FeaturedCategoryAdapter(mutableListOf())
 
+        private var featuredCategory = FeaturedCategory.Unknown
 
         init {
-            itemView.setOnClickListener(this)
+
+            itemView.featuredHeaderButton.setOnClickListener {
+
+                val activity = itemView.context as AppCompatActivity
+                activity.supportFragmentManager.beginTransaction().replace(R.id.myContainer, MediaListFragment(this.featuredCategory))
+                    .addToBackStack(FeaturedFragment.javaClass.name)
+                    .commit()
+
+            }
 
             itemView.featuredMediaRecyclerView.layoutManager =
                 LinearLayoutManager(itemView.context, LinearLayoutManager.HORIZONTAL, false )
@@ -36,16 +47,19 @@ class FeaturedAdapter(
 
         }
 
-        override fun onClick(v: View) {
-
+        fun bindFeaturedCategory(category: FeaturedCategory) {
+            this.featuredCategory = category
+            itemView.featuredHeaderButton.text =  when(category) {
+                FeaturedCategory.NowPlaying -> itemView.context.getString(R.string.featured_category_nowplaying)
+                FeaturedCategory.Upcoming ->  itemView.context.getString(R.string.featured_category_upcoming)
+                FeaturedCategory.TrendingMovies ->  itemView.context.getString(R.string.featured_category_trendingmovies)
+                FeaturedCategory.TrendingTv ->  itemView.context.getString(R.string.featured_category_trending_tvshows)
+                else ->  "Error"
+            }
         }
 
-        fun bindFeaturedCategory(category: String) {
-            itemView.featuredHeaderButton.text = category
-        }
-
-        fun updateFeaturedMedia(movies: List<Media>) {
-            featuredCategoryAdapter.updateMoviesForCategory(movies)
+        fun updateFeaturedMedia(mediaList: List<Media>) {
+            featuredCategoryAdapter.updateMoviesForCategory(mediaList)
         }
 
     }
@@ -70,14 +84,14 @@ class FeaturedAdapter(
         holder.bindFeaturedCategory(category)
 
         when (category) {
-            "Now Playing" -> holder.updateFeaturedMedia(this.featuredNowPlayingMovies)
-            "Upcoming" -> holder.updateFeaturedMedia(this.featuredUpComing)
-            "Trending Movies" -> holder.updateFeaturedMedia(this.featuredTrendingMovies)
-            "Trending TV" -> holder.updateFeaturedMedia(this.featuredTrendingTvShows)
+            FeaturedCategory.NowPlaying -> holder.updateFeaturedMedia(this.featuredNowPlayingMovies)
+            FeaturedCategory.Upcoming -> holder.updateFeaturedMedia(this.featuredUpComing)
+            FeaturedCategory.TrendingMovies -> holder.updateFeaturedMedia(this.featuredTrendingMovies)
+            FeaturedCategory.TrendingTv -> holder.updateFeaturedMedia(this.featuredTrendingTvShows)
         }
     }
 
-    fun updateCategories(categories: List<String>) {
+    fun updateCategories(categories: List<FeaturedCategory>) {
         this.featuredCategories.clear()
         this.featuredCategories.addAll(categories)
         notifyDataSetChanged()

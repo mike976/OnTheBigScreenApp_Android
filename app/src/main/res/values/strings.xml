@@ -6,4 +6,8 @@
     <string name="content_description_featured_header_image">featured_header_image</string>
     <string name="featured_header_button_content_description">featured Header Button Description</string>
     <string name="media_image_content_description">media poster</string>
+    <string name="featured_category_nowplaying">Now Playing</string>
+    <string name="featured_category_upcoming">Up Coming</string>
+    <string name="featured_category_trendingmovies">Trending Movies</string>
+    <string name="featured_category_trending_tvshows">Trending Tv</string>
 </resources>
