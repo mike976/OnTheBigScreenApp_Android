@@ -21,7 +21,9 @@
         android:padding="8dp"
         android:id="@+id/featuredHeaderButton"
         android:layout_width="@dimen/featured_header_button_height"
-        android:layout_height="160dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:lines="2"
         android:contentDescription="@string/featured_header_button_content_description"
         app:layout_constraintBottom_toBottomOf="parent"
        app:layout_constraintEnd_toEndOf="parent"
@@ -30,6 +32,8 @@
         android:text="tap to view all"
         android:textSize="@dimen/featured_header_button_textsize"
         android:background="@color/colorPrimaryDark"
+        android:drawableBottom="@drawable/ic_baseline_arrow_forward_24"
+        android:drawablePadding="8dp"
         />
 
 

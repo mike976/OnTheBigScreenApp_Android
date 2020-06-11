@@ -1,5 +1,6 @@
 package com.mike976.onthebigscreen.view.fragment
 
+import android.graphics.Color
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -13,7 +14,7 @@ import kotlinx.android.synthetic.main.list_item_media.view.*
 
 class FeaturedCategoryAdapter(val moviesByCategory: MutableList<Media>) : RecyclerView.Adapter<FeaturedCategoryAdapter.ViewHolder>() {
 
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
 
         //progressDrawable is a spinner that runs in imageview to provide visual feedback to user the image is loading
         private val progressDrawable = getProgressDrawable(itemView.context)
@@ -21,7 +22,12 @@ class FeaturedCategoryAdapter(val moviesByCategory: MutableList<Media>) : Recycl
         fun bind(media: Media?) {
             if(media != null) {
                 itemView.mediaImage.loadImage(media.posterUrl, progressDrawable)
+
             }
+        }
+
+        override fun onClick(v: View?) {
+            //TODO need to wire up navigating to the medialist fragment here passing the media
         }
     }
 
