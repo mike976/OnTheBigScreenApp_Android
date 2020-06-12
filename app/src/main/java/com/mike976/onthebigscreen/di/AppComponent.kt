@@ -1,7 +1,11 @@
 package com.mike976.onthebigscreen.di
 
 import com.example.onthebigscreen.MainActivity
+import com.example.onthebigscreen.service.ITmDbService
+import com.mike976.onthebigscreen.view.paging.MediaDataSourceFactory
+import com.mike976.onthebigscreen.viewmodel.MainViewModel
 import dagger.Component
+import dagger.Provides
 import javax.inject.Singleton
 
 //DAGGER IOC CONTAINER
@@ -21,4 +25,9 @@ interface AppComponent {
     //here we tell dagger that MainActivity depends on it, to supply member variables that have been annotated with @Inject
     //in this project example, we are injecting the viewmodelfactory into mainactivity
     fun inject(activity: MainActivity)
+
+    fun inject(mainViewModel: MainViewModel)
+
+    fun inject(mediadatasourcefactory: MediaDataSourceFactory)
+
 }

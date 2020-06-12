@@ -41,22 +41,26 @@ interface IApiClient {
     fun getNowPlayingMovies(
         @Query(API_KEY)key: String = API_KEY_VALUE,
         @Query(LANGUAGE_KEY) language:String = LANGUAGE_VALUE,
-        @Query(SORTBY_KEY) sortBy:String = SORTBY_VALUE): Call<MoviesApiResponse>
+        @Query(SORTBY_KEY) sortBy:String = SORTBY_VALUE,
+        @Query("page") page: Int=1): Call<MediaApiResponse>
 
     @GET(TRENDING_TVSHOWS)
     fun getTrendingTvShows(@Query(API_KEY)key: String = API_KEY_VALUE,
                            @Query(LANGUAGE_KEY) language:String = LANGUAGE_VALUE,
-                           @Query(SORTBY_KEY) sortBy:String = SORTBY_VALUE): Call<TvShowsApiResponse>
+                           @Query(SORTBY_KEY) sortBy:String = SORTBY_VALUE,
+                           @Query("page") page: Int=1): Call<MediaApiResponse>
 
     @GET(UPCOMING_MOVIES)
     fun getUpComingMovies(@Query(API_KEY)key: String = API_KEY_VALUE,
                           @Query(LANGUAGE_KEY) language:String = LANGUAGE_VALUE,
-                          @Query(SORTBY_KEY) sortBy:String = SORTBY_VALUE): Call<MoviesApiResponse>
+                          @Query(SORTBY_KEY) sortBy:String = SORTBY_VALUE,
+                          @Query("page") page: Int=1): Call<MediaApiResponse>
 
     @GET(TRENDING_MOVIES)
     fun getTrendingMovies(@Query(API_KEY)key: String = API_KEY_VALUE,
                           @Query(LANGUAGE_KEY) language:String = LANGUAGE_VALUE,
-                          @Query(SORTBY_KEY) sortBy:String = SORTBY_VALUE): Call<MoviesApiResponse>
+                          @Query(SORTBY_KEY) sortBy:String = SORTBY_VALUE,
+                          @Query("page") page: Int=1): Call<MediaApiResponse>
 
     @GET(SEARCH_MOVIES)
     fun getSearchMovies(@Query(QUERY_KEY) query: String,

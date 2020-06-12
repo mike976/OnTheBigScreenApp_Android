@@ -11,8 +11,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="649627d5-c9d5-44dd-94bc-b6692d9be34b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/fragment/MediaDetailFragment.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/media_detail_fragment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_paging_paging_common_2_0_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_paging_paging_runtime_2_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/paging/IPagedDataSource.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -24,17 +25,39 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/fragment/FeaturedAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/fragment/FeaturedAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/fragment/FeaturedCategoryAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/fragment/FeaturedCategoryAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/fragment/FeaturedFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/fragment/FeaturedFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/fragment/MediaListFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/fragment/MediaListFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_featured.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_featured.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_media_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_media_list.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/di/AppComponent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/di/AppComponent.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/di/ViewModelModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/di/ViewModelModule.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/model/FeaturedCategory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/model/FeaturedCategory.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/network/IApiClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/network/IApiClient.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/network/response/MediaApiResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/network/response/MediaApiResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/network/response/MoviesApiResponse.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/network/response/TvShowsApiResponse.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/service/ITmDbService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/service/ITmDbService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/service/TmDbService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/service/TmDbService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/util/Util.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/util/Util.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/fragment/FeaturedAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/adapter/FeaturedMediaAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/fragment/FeaturedCategoryAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/adapter/FeaturedMediaCategoryAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/fragment/FeaturedFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/fragment/FeaturedMediaFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/fragment/MediaDetailFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/fragment/MediaDetailFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/fragment/MediaListFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/fragment/FeaturedMediaCategoryFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/fragment/SearchFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/fragment/SearchMediaFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/viewmodel/AboutViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/viewmodel/AboutViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/viewmodel/IMainViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/viewmodel/IMainViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/viewmodel/MainViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/viewmodel/MainViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/viewmodel/MainViewModelFactory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/viewmodel/MainViewModelFactory.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_featured.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_featured_media.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_media_list.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_featured_media_category.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_search.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_search_media.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/list_item_media.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/list_item_media.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/media_detail_fragment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_media_detail.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,13 +117,14 @@
       <recent name="com.mike976.onthebigscreen.view" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.mike976.onthebigscreen.util" />
+      <recent name="com.mike976.onthebigscreen.view.adapter" />
       <recent name="com.mike976.onthebigscreen.view.fragment" />
       <recent name="com.mike976.onthebigscreen.view.fragments" />
       <recent name="com.mike976.onthebigscreen.viewmodel" />
-      <recent name="com.mike976.onthebigscreen.view" />
-      <recent name="com.mike976.onthebigscreen.di" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
       <recent name="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
       <recent name="$PROJECT_DIR$/app/src/main/res/menu" />
     </key>
@@ -189,14 +213,19 @@
       <screen x="0" y="23" width="1440" height="807" />
     </state>
     <state x="316" y="92" key="#Auto_Import/0.23.1440.807@0.23.1440.807" timestamp="1591800676975" />
-    <state x="241" y="166" key="#PSD" timestamp="1591719044112">
-      <screen x="0" y="23" width="1440" height="810" />
-    </state>
-    <state x="241" y="166" key="#PSD/0.23.1440.810@0.23.1440.810" timestamp="1591719044112" />
-    <state x="479" y="150" key="#com.intellij.ide.util.MemberChooser" timestamp="1591869233460">
+    <state x="241" y="165" key="#PSD" timestamp="1591950566507">
       <screen x="0" y="23" width="1440" height="807" />
     </state>
-    <state x="479" y="150" key="#com.intellij.ide.util.MemberChooser/0.23.1440.807@0.23.1440.807" timestamp="1591869233460" />
+    <state x="241" y="165" key="#PSD/0.23.1440.807@0.23.1440.807" timestamp="1591950566507" />
+    <state x="241" y="166" key="#PSD/0.23.1440.810@0.23.1440.810" timestamp="1591719044112" />
+    <state x="408" y="64" key="#app" timestamp="1591976258813">
+      <screen x="0" y="23" width="1440" height="807" />
+    </state>
+    <state x="408" y="64" key="#app/0.23.1440.807@0.23.1440.807" timestamp="1591976258813" />
+    <state x="479" y="150" key="#com.intellij.ide.util.MemberChooser" timestamp="1591962135957">
+      <screen x="0" y="23" width="1440" height="807" />
+    </state>
+    <state x="479" y="150" key="#com.intellij.ide.util.MemberChooser/0.23.1440.807@0.23.1440.807" timestamp="1591962135957" />
     <state x="479" y="150" key="#com.intellij.ide.util.MemberChooser/0.23.1440.810@0.23.1440.810" timestamp="1591795079904" />
     <state x="118" y="360" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1591776715696">
       <screen x="0" y="23" width="1440" height="810" />
@@ -214,10 +243,10 @@
       <screen x="0" y="23" width="1440" height="807" />
     </state>
     <state x="454" y="180" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.807@0.23.1440.807" timestamp="1591876094898" />
-    <state x="428" y="65" width="547" height="685" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1591876080021">
+    <state x="428" y="65" width="547" height="685" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1591881927333">
       <screen x="0" y="23" width="1440" height="807" />
     </state>
-    <state x="428" y="65" width="547" height="685" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.23.1440.807@0.23.1440.807" timestamp="1591876080021" />
+    <state x="428" y="65" width="547" height="685" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.23.1440.807@0.23.1440.807" timestamp="1591881927333" />
     <state x="428" y="65" width="569" height="685" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.23.1440.810@0.23.1440.810" timestamp="1591777535955" />
     <state x="304" y="189" key="AndroidCreateResourceDirectoryDialog" timestamp="1591714736239">
       <screen x="0" y="23" width="1440" height="810" />
@@ -237,53 +266,71 @@
       <screen x="0" y="23" width="1440" height="810" />
     </state>
     <state x="572" y="199" key="AndroidProcessChooserDialog/0.23.1440.810@0.23.1440.810" timestamp="1591794960827" />
-    <state width="1384" height="291" key="GridCell.Tab.0.bottom" timestamp="1591876456951">
+    <state width="639" height="466" key="DebuggerActiveHint" timestamp="1591980105037">
       <screen x="0" y="23" width="1440" height="807" />
     </state>
-    <state width="1384" height="291" key="GridCell.Tab.0.bottom/0.23.1440.807@0.23.1440.807" timestamp="1591876456951" />
+    <state width="639" height="466" key="DebuggerActiveHint/0.23.1440.807@0.23.1440.807" timestamp="1591980105037" />
+    <state width="1384" height="185" key="GridCell.Tab.0.bottom" timestamp="1591982482479">
+      <screen x="0" y="23" width="1440" height="807" />
+    </state>
+    <state width="1384" height="185" key="GridCell.Tab.0.bottom/0.23.1440.807@0.23.1440.807" timestamp="1591982482479" />
     <state width="1384" height="164" key="GridCell.Tab.0.bottom/0.23.1440.810@0.23.1440.810" timestamp="1591794312229" />
-    <state width="1384" height="291" key="GridCell.Tab.0.center" timestamp="1591876456949">
+    <state width="1384" height="185" key="GridCell.Tab.0.center" timestamp="1591982482478">
       <screen x="0" y="23" width="1440" height="807" />
     </state>
-    <state width="1384" height="291" key="GridCell.Tab.0.center/0.23.1440.807@0.23.1440.807" timestamp="1591876456949" />
+    <state width="1384" height="185" key="GridCell.Tab.0.center/0.23.1440.807@0.23.1440.807" timestamp="1591982482478" />
     <state width="1384" height="164" key="GridCell.Tab.0.center/0.23.1440.810@0.23.1440.810" timestamp="1591794312228" />
-    <state width="1384" height="291" key="GridCell.Tab.0.left" timestamp="1591876456948">
+    <state width="1384" height="185" key="GridCell.Tab.0.left" timestamp="1591982482478">
       <screen x="0" y="23" width="1440" height="807" />
     </state>
-    <state width="1384" height="291" key="GridCell.Tab.0.left/0.23.1440.807@0.23.1440.807" timestamp="1591876456948" />
+    <state width="1384" height="185" key="GridCell.Tab.0.left/0.23.1440.807@0.23.1440.807" timestamp="1591982482478" />
     <state width="1384" height="164" key="GridCell.Tab.0.left/0.23.1440.810@0.23.1440.810" timestamp="1591794312227" />
-    <state width="1384" height="291" key="GridCell.Tab.0.right" timestamp="1591876456950">
+    <state width="1384" height="185" key="GridCell.Tab.0.right" timestamp="1591982482479">
       <screen x="0" y="23" width="1440" height="807" />
     </state>
-    <state width="1384" height="291" key="GridCell.Tab.0.right/0.23.1440.807@0.23.1440.807" timestamp="1591876456950" />
+    <state width="1384" height="185" key="GridCell.Tab.0.right/0.23.1440.807@0.23.1440.807" timestamp="1591982482479" />
     <state width="1384" height="164" key="GridCell.Tab.0.right/0.23.1440.810@0.23.1440.810" timestamp="1591794312228" />
-    <state width="1384" height="257" key="GridCell.Tab.1.bottom" timestamp="1591869542062">
+    <state width="1384" height="257" key="GridCell.Tab.1.bottom" timestamp="1591982154369">
       <screen x="0" y="23" width="1440" height="807" />
     </state>
-    <state width="1384" height="257" key="GridCell.Tab.1.bottom/0.23.1440.807@0.23.1440.807" timestamp="1591869542062" />
-    <state width="1384" height="257" key="GridCell.Tab.1.center" timestamp="1591869542062">
+    <state width="1384" height="257" key="GridCell.Tab.1.bottom/0.23.1440.807@0.23.1440.807" timestamp="1591982154369" />
+    <state width="1384" height="257" key="GridCell.Tab.1.center" timestamp="1591982154368">
       <screen x="0" y="23" width="1440" height="807" />
     </state>
-    <state width="1384" height="257" key="GridCell.Tab.1.center/0.23.1440.807@0.23.1440.807" timestamp="1591869542062" />
-    <state width="1384" height="257" key="GridCell.Tab.1.left" timestamp="1591869542062">
+    <state width="1384" height="257" key="GridCell.Tab.1.center/0.23.1440.807@0.23.1440.807" timestamp="1591982154368" />
+    <state width="1384" height="257" key="GridCell.Tab.1.left" timestamp="1591982154367">
       <screen x="0" y="23" width="1440" height="807" />
     </state>
-    <state width="1384" height="257" key="GridCell.Tab.1.left/0.23.1440.807@0.23.1440.807" timestamp="1591869542062" />
-    <state width="1384" height="257" key="GridCell.Tab.1.right" timestamp="1591869542062">
+    <state width="1384" height="257" key="GridCell.Tab.1.left/0.23.1440.807@0.23.1440.807" timestamp="1591982154367" />
+    <state width="1384" height="257" key="GridCell.Tab.1.right" timestamp="1591982154368">
       <screen x="0" y="23" width="1440" height="807" />
     </state>
-    <state width="1384" height="257" key="GridCell.Tab.1.right/0.23.1440.807@0.23.1440.807" timestamp="1591869542062" />
-    <state x="352" y="240" key="com.intellij.ide.util.TipDialog" timestamp="1591709253182">
-      <screen x="0" y="23" width="1440" height="810" />
+    <state width="1384" height="257" key="GridCell.Tab.1.right/0.23.1440.807@0.23.1440.807" timestamp="1591982154368" />
+    <state x="352" y="239" key="com.intellij.ide.util.TipDialog" timestamp="1591976184079">
+      <screen x="0" y="23" width="1440" height="807" />
     </state>
+    <state x="352" y="239" key="com.intellij.ide.util.TipDialog/0.23.1440.807@0.23.1440.807" timestamp="1591976184079" />
     <state x="352" y="240" key="com.intellij.ide.util.TipDialog/0.23.1440.810@0.23.1440.810" timestamp="1591709253182" />
-    <state x="369" y="183" width="693" height="488" key="find.popup" timestamp="1591718080773">
-      <screen x="0" y="23" width="1440" height="810" />
+    <state x="369" y="182" width="693" height="488" key="find.popup" timestamp="1591961376960">
+      <screen x="0" y="23" width="1440" height="807" />
     </state>
+    <state x="369" y="182" width="693" height="488" key="find.popup/0.23.1440.807@0.23.1440.807" timestamp="1591961376960" />
     <state x="369" y="183" width="693" height="488" key="find.popup/0.23.1440.810@0.23.1440.810" timestamp="1591718080773" />
-    <state x="263" y="177" key="psd.add.library.dependency.panel.dimension" timestamp="1591719042209">
-      <screen x="0" y="23" width="1440" height="810" />
+    <state x="263" y="176" key="psd.add.library.dependency.panel.dimension" timestamp="1591950539183">
+      <screen x="0" y="23" width="1440" height="807" />
     </state>
+    <state x="263" y="176" key="psd.add.library.dependency.panel.dimension/0.23.1440.807@0.23.1440.807" timestamp="1591950539183" />
     <state x="263" y="177" key="psd.add.library.dependency.panel.dimension/0.23.1440.810@0.23.1440.810" timestamp="1591719042209" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/paging/MediaDataSourceFactory.kt</url>
+          <line>59</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

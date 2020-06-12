@@ -1,0 +1,91 @@
+package com.mike976.onthebigscreen.view.fragment
+
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
+import androidx.paging.PagedList
+import androidx.recyclerview.widget.GridLayoutManager
+import com.example.onthebigscreen.R
+import com.example.onthebigscreen.featured.model.Media
+import com.mike976.onthebigscreen.model.FeaturedCategory
+import com.mike976.onthebigscreen.util.ItemOffsetDecoration
+import com.mike976.onthebigscreen.view.adapter.FeaturedMediaCategoryAdapter
+import com.mike976.onthebigscreen.viewmodel.MainViewModel
+import kotlinx.android.synthetic.main.fragment_featured_media_category.*
+
+class FeaturedMediaCategoryFragment(val featuredCategory: FeaturedCategory) : Fragment() {
+
+    companion object {
+        fun newInstance() =
+            FeaturedMediaCategoryFragment(FeaturedCategory.Unknown)
+    }
+
+    private lateinit var viewModel: MainViewModel
+
+    private val adapter = FeaturedMediaCategoryAdapter(mutableListOf())
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        return inflater.inflate(R.layout.fragment_featured_media_category, container, false)
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        viewModel = activity?.let { ViewModelProviders.of(it).get(MainViewModel::class.java) }!!
+
+        try {
+            val activity = view?.context as AppCompatActivity
+            activity?.supportActionBar?.title = featuredCategory.description
+            activity?.supportActionBar!!.show()
+        } catch (e: NullPointerException) {
+        }
+
+        featuredCategoryRecyclerView.layoutManager = GridLayoutManager(context, 3, GridLayoutManager.VERTICAL, false)
+        featuredCategoryRecyclerView.adapter = adapter
+        featuredCategoryRecyclerView.addItemDecoration(
+            ItemOffsetDecoration(
+                5
+            )
+        );
+
+        if(featuredCategory == FeaturedCategory.Unknown) {
+            return
+        }
+
+        var pagedList = getPagedListByCategory(featuredCategory)
+        pagedList.observe(this, Observer {pl ->
+            println("${pl[0]?.title}")
+        })
+    }
+
+    private fun getPagedListByCategory(featuredCategory: FeaturedCategory): LiveData<PagedList<Media>> {
+        return when(featuredCategory) {
+            FeaturedCategory.TrendingTv -> viewModel.trendingTvShowsPagedList
+            FeaturedCategory.NowPlaying -> viewModel.nowPlayingMoviesPagedList
+            FeaturedCategory.Upcoming -> viewModel.upComingMoviesPagedList
+            FeaturedCategory.TrendingMovies -> viewModel.trendingMoviesPagedList
+
+            else -> viewModel.nowPlayingMoviesPagedList
+        }
+    }
+
+    override fun onDestroyView() {
+        try {
+            val activity = view?.context as AppCompatActivity
+            activity?.supportActionBar!!.hide()
+        } catch (e: NullPointerException) {
+        }
+        super.onDestroyView()
+    }
+
+}
+

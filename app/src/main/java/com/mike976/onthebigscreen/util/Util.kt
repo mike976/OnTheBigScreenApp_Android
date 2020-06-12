@@ -8,6 +8,7 @@ import androidx.annotation.ColorInt
 import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.example.onthebigscreen.MainActivity
 import com.example.onthebigscreen.R
 
 fun getProgressDrawable(context: Context) : CircularProgressDrawable {

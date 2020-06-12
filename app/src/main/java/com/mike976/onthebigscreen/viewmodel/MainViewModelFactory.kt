@@ -2,7 +2,9 @@ package com.mike976.onthebigscreen.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.example.onthebigscreen.featured.model.MediaType
 import com.example.onthebigscreen.service.ITmDbService
+import com.mike976.onthebigscreen.app.component
 import javax.inject.Inject
 
 @Suppress("UNCHECKED_CAST")

@@ -1,14 +1,21 @@
 package com.example.onthebigscreen
 
 import android.os.Bundle
+import androidx.annotation.Nullable
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.paging.PagedList
+import com.example.onthebigscreen.featured.model.Media
+import com.example.onthebigscreen.featured.model.MediaType
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.mike976.onthebigscreen.app.component
+import com.mike976.onthebigscreen.model.FeaturedCategory
 import com.mike976.onthebigscreen.view.fragment.AboutFragment
-import com.mike976.onthebigscreen.view.fragment.FeaturedFragment
-import com.mike976.onthebigscreen.view.fragment.SearchFragment
+import com.mike976.onthebigscreen.view.fragment.FeaturedMediaFragment
+import com.mike976.onthebigscreen.view.fragment.SearchMediaFragment
 import com.mike976.onthebigscreen.viewmodel.MainViewModel
 import com.mike976.onthebigscreen.viewmodel.MainViewModelFactory
 import kotlinx.android.synthetic.main.activity_main.*
@@ -22,18 +29,20 @@ class MainActivity : AppCompatActivity() {
     private lateinit var viewModel: MainViewModel
 
     private val featuredFragment =
-        FeaturedFragment()
+        FeaturedMediaFragment()
     private val searchFragment =
-        SearchFragment()
+        SearchMediaFragment()
     private val aboutFragment =
         AboutFragment()
+
+
 
     private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         val fragment = when (item.itemId) {
             R.id.navigation_featured -> featuredFragment
             R.id.navigation_search -> searchFragment
             R.id.navigation_about -> aboutFragment
-            else -> FeaturedFragment()
+            else -> FeaturedMediaFragment()
         }
         switchToFragment(fragment)
         true
@@ -44,26 +53,29 @@ class MainActivity : AppCompatActivity() {
         transaction.replace(R.id.main_container, fragment).commit()
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
+    fun hideActionBar() {
         try {
             this.supportActionBar!!.hide()
         } catch (e: NullPointerException) {
         }
+    }
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        hideActionBar()
 
         component.inject(this)
 
         navigation.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
 
-        switchToFragment(featuredFragment)
-
         viewModel = ViewModelProviders.of(this, factory).get(MainViewModel::class.java)
 
+        switchToFragment(featuredFragment)
 
 
 //        service.getSearchMovies("Star").observe(this, Observer<ApiResponseMessage<List<Media>>> { responseMessage ->
+
 //
 //            if(responseMessage?.statusApi == ApiResponseStatus.SUCCESS && responseMessage.data != null) {
 //                val searchMovies = responseMessage.data

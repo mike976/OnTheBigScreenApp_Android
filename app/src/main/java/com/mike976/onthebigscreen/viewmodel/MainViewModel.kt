@@ -2,19 +2,42 @@ package com.mike976.onthebigscreen.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
+import androidx.paging.LivePagedListBuilder
+import androidx.paging.PagedList
 import com.example.onthebigscreen.featured.model.Media
 import com.example.onthebigscreen.featured.model.MediaType
 import com.example.onthebigscreen.featured.model.Movie
 import com.example.onthebigscreen.featured.model.TvShow
 import com.example.onthebigscreen.network.ApiResponseMessage
 import com.example.onthebigscreen.service.ITmDbService
+import com.mike976.onthebigscreen.app.component
+import com.mike976.onthebigscreen.model.FeaturedCategory
 import com.mike976.onthebigscreen.model.MoviesListType
 import com.mike976.onthebigscreen.network.response.MediaCreditsAPIResponse
 import com.mike976.onthebigscreen.network.response.MediaDetailApiResponse
+import com.mike976.onthebigscreen.view.paging.IPagedDataSource
+import com.mike976.onthebigscreen.view.paging.MediaDataSourceFactory
+
 
 class MainViewModel (private val service: ITmDbService) : ViewModel(), IMainViewModel {
 
+    lateinit var nowPlayingMoviesPagedList: LiveData<PagedList<Media>>
+    lateinit var upComingMoviesPagedList: LiveData<PagedList<Media>>
+    lateinit var trendingMoviesPagedList: LiveData<PagedList<Media>>
+    lateinit var trendingTvShowsPagedList: LiveData<PagedList<Media>>
+
     var counter = 0
+
+    init {
+        component.inject(this)
+
+        nowPlayingMoviesPagedList = createPagedList(MediaType.Movie, FeaturedCategory.NowPlaying)
+        upComingMoviesPagedList = createPagedList(MediaType.Movie, FeaturedCategory.Upcoming)
+        trendingMoviesPagedList = createPagedList(MediaType.Movie, FeaturedCategory.TrendingMovies)
+        trendingTvShowsPagedList = createPagedList(MediaType.TVShow, FeaturedCategory.TrendingTv)
+
+    }
+
 
     override fun getMovies(moviesListType: MoviesListType) : LiveData<ApiResponseMessage<List<Movie>>>? {
 
@@ -54,6 +77,20 @@ class MainViewModel (private val service: ITmDbService) : ViewModel(), IMainView
         }
 
         return null
+    }
+
+    private fun createPagedList (mediaType: MediaType, featuredCategory: FeaturedCategory): LiveData<PagedList<Media>> {
+
+        val factory = MediaDataSourceFactory()
+        factory.featuredCategory = featuredCategory
+        factory.mediaType = mediaType
+
+        val config: PagedList.Config = PagedList.Config.Builder()
+            .setEnablePlaceholders(false)
+            .setPageSize(IPagedDataSource.PAGE_SIZE)
+            .build()
+
+        return LivePagedListBuilder(factory, config).build()
     }
 
 

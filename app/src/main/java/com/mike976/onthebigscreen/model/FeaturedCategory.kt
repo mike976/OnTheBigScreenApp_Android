@@ -1,10 +1,10 @@
 package com.mike976.onthebigscreen.model
 
-enum class FeaturedCategory {
+enum class FeaturedCategory(val description:String) {
 
-    NowPlaying,
-    Upcoming,
-    TrendingMovies,
-    TrendingTv,
-    Unknown
+    NowPlaying("Now Playing"),
+    Upcoming("Up Coming"),
+    TrendingMovies("Trending Movies"),
+    TrendingTv("Trending TV"),
+    Unknown("Unknown")
 }

@@ -23,7 +23,7 @@ class MediaDetailFragment(val mediaId: Int, val mediaType: MediaType) : Fragment
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.media_detail_fragment, container, false)
+        return inflater.inflate(R.layout.fragment_media_detail, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

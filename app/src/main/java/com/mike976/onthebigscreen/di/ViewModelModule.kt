@@ -1,6 +1,9 @@
 package com.mike976.onthebigscreen.di
 
+import com.example.onthebigscreen.MainActivity
+import com.example.onthebigscreen.featured.model.MediaType
 import com.example.onthebigscreen.service.ITmDbService
+import com.mike976.onthebigscreen.viewmodel.MainViewModel
 import com.mike976.onthebigscreen.viewmodel.MainViewModelFactory
 import dagger.Module
 import dagger.Provides
@@ -14,4 +17,5 @@ class ViewModelModule {
     fun providesMainViewModelFactory(service: ITmDbService): MainViewModelFactory {
         return MainViewModelFactory(service)
     }
+
 }

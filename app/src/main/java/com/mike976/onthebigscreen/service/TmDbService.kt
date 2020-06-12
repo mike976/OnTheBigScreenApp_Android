@@ -6,8 +6,10 @@ import com.example.onthebigscreen.featured.model.Media
 import com.example.onthebigscreen.featured.model.Movie
 import com.example.onthebigscreen.featured.model.TvShow
 import com.example.onthebigscreen.network.*
+import com.mike976.onthebigscreen.app.component
 import com.mike976.onthebigscreen.network.response.MediaCreditsAPIResponse
 import com.mike976.onthebigscreen.network.response.MediaDetailApiResponse
+import com.mike976.onthebigscreen.view.paging.MediaDataSourceFactory
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -17,24 +19,23 @@ import javax.inject.Inject
 
 class TmDbService @Inject constructor (private val api: IApiClient): ITmDbService {
 
-
-    override fun getNowPlayingMovies(): LiveData<ApiResponseMessage<List<Movie>>> {
+    override fun getNowPlayingMovies(page: Int): LiveData<ApiResponseMessage<List<Movie>>> {
         val liveData = MutableLiveData<ApiResponseMessage<List<Movie>>>()
 
-        api.getNowPlayingMovies().enqueue(object : Callback<MoviesApiResponse> {
+        api.getNowPlayingMovies(page=page).enqueue(object : Callback<MediaApiResponse> {
             override fun onResponse(
-                call: Call<MoviesApiResponse>,
-                response: Response<MoviesApiResponse>
+                call: Call<MediaApiResponse>,
+                response: Response<MediaApiResponse>
             ) {
                 if (response != null && response.isSuccessful) {
                     liveData.value =
-                        ApiResponseMessage.success(response.body()?.results) //retrofit is able to convert response body to gists because the data class uses serializedname atribute to ensure can desrialize josn to data class
+                        ApiResponseMessage.success(response.body()?.results as List<Movie>) //retrofit is able to convert response body to gists because the data class uses serializedname atribute to ensure can desrialize josn to data class
                 } else {
                     liveData.value = ApiResponseMessage.error(ApiError.NOW_PLAYING_MOVIES, null)
                 }
             }
 
-            override fun onFailure(call: Call<MoviesApiResponse>, t: Throwable) {
+            override fun onFailure(call: Call<MediaApiResponse>, t: Throwable) {
 
             }
         })
@@ -42,23 +43,23 @@ class TmDbService @Inject constructor (private val api: IApiClient): ITmDbServic
         return liveData
     }
 
-    override fun getUpComingMovies(): LiveData<ApiResponseMessage<List<Movie>>> {
+    override fun getUpComingMovies(page: Int): LiveData<ApiResponseMessage<List<Movie>>> {
         val liveData = MutableLiveData<ApiResponseMessage<List<Movie>>>()
 
-        api.getUpComingMovies().enqueue(object : Callback<MoviesApiResponse> {
+        api.getUpComingMovies(page=page).enqueue(object : Callback<MediaApiResponse> {
             override fun onResponse(
-                call: Call<MoviesApiResponse>,
-                response: Response<MoviesApiResponse>
+                call: Call<MediaApiResponse>,
+                response: Response<MediaApiResponse>
             ) {
                 if (response != null && response.isSuccessful) {
                     liveData.value =
-                        ApiResponseMessage.success(response.body()?.results) //retrofit is able to convert response body to gists because the data class uses serializedname atribute to ensure can desrialize josn to data class
+                        ApiResponseMessage.success(response.body()?.results as List<Movie>) //retrofit is able to convert response body to gists because the data class uses serializedname atribute to ensure can desrialize josn to data class
                 } else {
                     liveData.value = ApiResponseMessage.error(ApiError.UPCOMING_MOVIES, null)
                 }
             }
 
-            override fun onFailure(call: Call<MoviesApiResponse>, t: Throwable) {
+            override fun onFailure(call: Call<MediaApiResponse>, t: Throwable) {
 
             }
         })
@@ -67,23 +68,23 @@ class TmDbService @Inject constructor (private val api: IApiClient): ITmDbServic
     }
 
 
-    override fun getTrendingMovies(): LiveData<ApiResponseMessage<List<Movie>>> {
+    override fun getTrendingMovies(page: Int): LiveData<ApiResponseMessage<List<Movie>>> {
         val liveData = MutableLiveData<ApiResponseMessage<List<Movie>>>()
 
-        api.getTrendingMovies().enqueue(object : Callback<MoviesApiResponse> {
+        api.getTrendingMovies(page=page).enqueue(object : Callback<MediaApiResponse> {
             override fun onResponse(
-                call: Call<MoviesApiResponse>,
-                response: Response<MoviesApiResponse>
+                call: Call<MediaApiResponse>,
+                response: Response<MediaApiResponse>
             ) {
                 if (response != null && response.isSuccessful) {
                     liveData.value =
-                        ApiResponseMessage.success(response.body()?.results) //retrofit is able to convert response body to gists because the data class uses serializedname atribute to ensure can desrialize josn to data class
+                        ApiResponseMessage.success(response.body()?.results as List<Movie>) //retrofit is able to convert response body to gists because the data class uses serializedname atribute to ensure can desrialize josn to data class
                 } else {
                     liveData.value = ApiResponseMessage.error(ApiError.TRENDING_MOVIES, null)
                 }
             }
 
-            override fun onFailure(call: Call<MoviesApiResponse>, t: Throwable) {
+            override fun onFailure(call: Call<MediaApiResponse>, t: Throwable) {
 
             }
         })
@@ -115,23 +116,23 @@ class TmDbService @Inject constructor (private val api: IApiClient): ITmDbServic
         return liveData
     }
 
-    override fun getTrendingTvShows(): LiveData<ApiResponseMessage<List<TvShow>>> {
+    override fun getTrendingTvShows(page:Int): LiveData<ApiResponseMessage<List<TvShow>>> {
         val liveData = MutableLiveData<ApiResponseMessage<List<TvShow>>>()
 
-        api.getTrendingTvShows().enqueue(object : Callback<TvShowsApiResponse> {
+        api.getTrendingTvShows(page=page).enqueue(object : Callback<MediaApiResponse> {
             override fun onResponse(
-                call: Call<TvShowsApiResponse>,
-                apiResponse: Response<TvShowsApiResponse>
+                call: Call<MediaApiResponse>,
+                apiResponse: Response<MediaApiResponse>
             ) {
                 if (apiResponse != null && apiResponse.isSuccessful) {
                     liveData.value =
-                        ApiResponseMessage.success(apiResponse.body()?.results) //retrofit is able to convert response body to gists because the data class uses serializedname atribute to ensure can desrialize josn to data class
+                        ApiResponseMessage.success(apiResponse.body()?.results as List<TvShow>) //retrofit is able to convert response body to gists because the data class uses serializedname atribute to ensure can desrialize josn to data class
                 } else {
                     liveData.value = ApiResponseMessage.error(ApiError.TRENDING_TVSHOWS, null)
                 }
             }
 
-            override fun onFailure(call: Call<TvShowsApiResponse>, t: Throwable) {
+            override fun onFailure(call: Call<MediaApiResponse>, t: Throwable) {
 
             }
         })
