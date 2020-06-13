@@ -37,7 +37,7 @@ class FeaturedMediaAdapter(
 
         init {
 
-            itemView.featuredHeaderButton.setOnClickListener {
+            itemView.featuredHeaderTextView.setOnClickListener {
 
                 val activity = itemView.context as AppCompatActivity
                 activity.supportFragmentManager.beginTransaction().replace(R.id.featuredMediaContainer,
@@ -58,7 +58,7 @@ class FeaturedMediaAdapter(
 
         fun bindFeaturedCategory(category: FeaturedCategory) {
             this.featuredCategory = category
-            itemView.featuredHeaderButton.text =  when(category) {
+            itemView.featuredHeaderTextView.text =  when(category) {
                 FeaturedCategory.NowPlaying -> itemView.context.getString(R.string.featured_category_nowplaying)
                 FeaturedCategory.Upcoming ->  itemView.context.getString(R.string.featured_category_upcoming)
                 FeaturedCategory.TrendingMovies ->  itemView.context.getString(R.string.featured_category_trendingmovies)

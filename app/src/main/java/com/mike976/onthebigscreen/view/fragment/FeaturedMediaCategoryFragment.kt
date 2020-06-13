@@ -16,7 +16,7 @@ import com.example.onthebigscreen.R
 import com.example.onthebigscreen.featured.model.Media
 import com.mike976.onthebigscreen.model.FeaturedCategory
 import com.mike976.onthebigscreen.util.ItemOffsetDecoration
-import com.mike976.onthebigscreen.view.adapter.FeaturedMediaCategoryAdapter
+import com.mike976.onthebigscreen.view.adapter.FeaturedMediaPagedCategoryAdapter
 import com.mike976.onthebigscreen.viewmodel.MainViewModel
 import kotlinx.android.synthetic.main.fragment_featured_media_category.*
 
@@ -29,7 +29,7 @@ class FeaturedMediaCategoryFragment(val featuredCategory: FeaturedCategory) : Fr
 
     private lateinit var viewModel: MainViewModel
 
-    private val adapter = FeaturedMediaCategoryAdapter(mutableListOf())
+    private val adapter = FeaturedMediaPagedCategoryAdapter(mutableListOf())
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -62,9 +62,19 @@ class FeaturedMediaCategoryFragment(val featuredCategory: FeaturedCategory) : Fr
         }
 
         var pagedList = getPagedListByCategory(featuredCategory)
-        pagedList.observe(this, Observer {pl ->
-            println("${pl[0]?.title}")
+        pagedList.observe(this, Observer {
+
+            adapter.submitList(it)
         })
+    }
+
+    override fun onDestroyView() {
+        try {
+            val activity = view?.context as AppCompatActivity
+            activity?.supportActionBar!!.hide()
+        } catch (e: NullPointerException) {
+        }
+        super.onDestroyView()
     }
 
     private fun getPagedListByCategory(featuredCategory: FeaturedCategory): LiveData<PagedList<Media>> {
@@ -77,15 +87,5 @@ class FeaturedMediaCategoryFragment(val featuredCategory: FeaturedCategory) : Fr
             else -> viewModel.nowPlayingMoviesPagedList
         }
     }
-
-    override fun onDestroyView() {
-        try {
-            val activity = view?.context as AppCompatActivity
-            activity?.supportActionBar!!.hide()
-        } catch (e: NullPointerException) {
-        }
-        super.onDestroyView()
-    }
-
 }
 

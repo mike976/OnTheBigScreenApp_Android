@@ -32,7 +32,11 @@ class FeaturedMediaCategoryAdapter(val mediaByCategory: MutableList<Media>) : Re
         fun bind(media: Media?) {
             if(media != null) {
                 this.media = media
-                itemView.mediaImage.loadImage(media.posterUrl, progressDrawable)
+
+                if(media.posterPath != null) {
+                    itemView.mediaImage.loadImage(media.posterUrl, progressDrawable)
+                }
+
 
             }
         }
@@ -40,23 +44,28 @@ class FeaturedMediaCategoryAdapter(val mediaByCategory: MutableList<Media>) : Re
         override fun onClick(v: View?) {
             if (this.media != null) {
 
-                var mediaType = MediaType.None
-                if (media is Movie) {
-                    mediaType = MediaType.Movie
-                }  else if (media is TvShow) {
-                    mediaType = MediaType.TVShow
-                }
-
-                val activity = itemView.context as AppCompatActivity
-                activity.supportFragmentManager.beginTransaction().replace(R.id.featuredMediaContainer,
-                    MediaDetailFragment(
-                        media.id,
-                        mediaType
-                    )
-                )
-                    .addToBackStack(FeaturedMediaFragment.javaClass.name)
-                    .commit()
+                navigateToMediaDetailFragment(this.media)
             }
+        }
+
+        private fun navigateToMediaDetailFragment(media: Media) {
+
+            var mediaType = MediaType.None
+            if (media is Movie) {
+                mediaType = MediaType.Movie
+            }  else if (media is TvShow) {
+                mediaType = MediaType.TVShow
+            }
+
+            val activity = itemView.context as AppCompatActivity
+            activity.supportFragmentManager.beginTransaction().replace(R.id.featuredMediaContainer,
+                MediaDetailFragment(
+                    media.id,
+                    mediaType
+                )
+            )
+                .addToBackStack(FeaturedMediaFragment.javaClass.name)
+                .commit()
         }
 
     }

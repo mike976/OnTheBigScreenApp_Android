@@ -15,11 +15,11 @@
         android:layout_height="160dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/featuredHeaderButton"/>
+        app:layout_constraintEnd_toStartOf="@id/featuredHeaderTextView"/>
 
-    <Button
+    <TextView
         android:padding="8dp"
-        android:id="@+id/featuredHeaderButton"
+        android:id="@+id/featuredHeaderTextView"
         android:layout_width="@dimen/featured_header_button_height"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -31,6 +31,7 @@
         android:textColor="@color/colorAccent"
         android:text="tap to view all"
         android:textSize="@dimen/featured_header_button_textsize"
+        android:textStyle="bold"
         android:background="@color/colorPrimaryDark"
         android:drawableBottom="@drawable/ic_baseline_arrow_forward_24"
         android:drawablePadding="8dp"

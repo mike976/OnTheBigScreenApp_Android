@@ -19,6 +19,8 @@ import javax.inject.Inject
 
 class TmDbService @Inject constructor (private val api: IApiClient): ITmDbService {
 
+    //TODO REFACTOR
+
     override fun getNowPlayingMovies(page: Int): LiveData<ApiResponseMessage<List<Movie>>> {
         val liveData = MutableLiveData<ApiResponseMessage<List<Movie>>>()
 

@@ -2,6 +2,6 @@
 <resources>
     <dimen name="featured_header_image_height">200dp</dimen>
     <dimen name="padding_half">8dp</dimen>
-    <dimen name="featured_header_button_textsize">12dp</dimen>
+    <dimen name="featured_header_button_textsize">12sp</dimen>
     <dimen name="featured_header_button_height">80dp</dimen>
 </resources>
