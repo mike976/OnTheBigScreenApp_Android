@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6a1b9a</color>
+    <color name="colorPrimary">#263238</color>
 
 <!--    <color name="colorPrimary">#424242</color>-->
-    <color name="colorPrimaryDark">#38006b</color>
+    <color name="colorPrimaryDark">#000a12</color>
     <color name="colorAccent">#FFFFFF</color>
+    <color name="mediaType_TvShow">#ff8f00</color>
+    <color name="mediaType_Movie">#76ff03</color>
+    <color name="golden">#ffd600</color>
+    <color name="divider_color">#FFFFFF</color>
 
 <!--    <color name="colorPrimary">#6200EE</color>-->
 <!--    <color name="colorPrimaryDark">#3700B3</color>-->

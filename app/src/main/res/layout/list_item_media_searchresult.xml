@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="160dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="@dimen/padding_standard">
+
+        <ImageView
+            android:id="@+id/posterImage"
+            android:layout_width="100dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_margin="@dimen/padding_half"
+            android:scaleType="fitXY"/>
+
+        <TextView
+            android:id="@+id/mediaTypeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_standard"
+            android:layout_marginTop="@dimen/padding_standard"
+            app:layout_constraintStart_toEndOf="@id/posterImage"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="Media"
+            android:lines="1"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:paddingStart="@dimen/padding_half"
+            android:paddingEnd="@dimen/padding_half"
+            android:textSize="10sp"
+
+             />
+
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_standard"
+            android:layout_marginTop="@dimen/padding_half"
+            android:layout_marginEnd="@dimen/padding_standard"
+            app:layout_constraintStart_toEndOf="@id/posterImage"
+            app:layout_constraintTop_toBottomOf="@id/mediaTypeTextView"
+            android:text="Title"
+            android:maxWidth="270dp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:textSize="20sp"
+
+            android:ellipsize="end"
+            android:maxLines="1"
+
+            >
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/ratingsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_standard"
+            android:layout_marginTop="@dimen/padding_half"
+            app:layout_constraintStart_toEndOf="@id/posterImage"
+            app:layout_constraintTop_toBottomOf="@id/titleTextView"
+            android:text="Ratings:"
+            android:lines="1"
+            android:gravity="center_vertical"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@android:color/white"
+            >
+
+        </TextView>
+
+        <RatingBar
+            android:id="@+id/mediaRatingsBar"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/padding_half"
+            app:layout_constraintStart_toEndOf="@+id/ratingsTextView"
+            app:layout_constraintTop_toTopOf="@id/ratingsTextView"
+            app:layout_constraintBottom_toBottomOf="@id/ratingsTextView"
+            android:numStars="5"
+            android:max="1"
+            android:progressTint="@color/golden"
+            android:stepSize="1"
+            style = "?android:attr/ratingBarStyleSmall"/>
+
+        <TextView
+            android:id="@+id/releaseYearTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_standard"
+            android:layout_marginTop="@dimen/padding_half"
+            app:layout_constraintStart_toEndOf="@id/posterImage"
+            app:layout_constraintTop_toBottomOf="@id/ratingsTextView"
+            android:textColor="@android:color/white"
+            android:text="Year"
+            android:lines="1"
+            android:gravity="center_vertical"
+            android:ellipsize="end"
+            android:maxLines="1"
+            >
+
+        </TextView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

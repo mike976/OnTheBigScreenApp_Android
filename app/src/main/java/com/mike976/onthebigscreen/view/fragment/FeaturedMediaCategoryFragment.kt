@@ -19,6 +19,7 @@ import com.mike976.onthebigscreen.util.ItemOffsetDecoration
 import com.mike976.onthebigscreen.view.adapter.FeaturedMediaPagedCategoryAdapter
 import com.mike976.onthebigscreen.viewmodel.MainViewModel
 import kotlinx.android.synthetic.main.fragment_featured_media_category.*
+import java.lang.Exception
 
 class FeaturedMediaCategoryFragment(val featuredCategory: FeaturedCategory) : Fragment() {
 
@@ -42,12 +43,7 @@ class FeaturedMediaCategoryFragment(val featuredCategory: FeaturedCategory) : Fr
         super.onActivityCreated(savedInstanceState)
         viewModel = activity?.let { ViewModelProviders.of(it).get(MainViewModel::class.java) }!!
 
-        try {
-            val activity = view?.context as AppCompatActivity
-            activity?.supportActionBar?.title = featuredCategory.description
-            activity?.supportActionBar!!.show()
-        } catch (e: NullPointerException) {
-        }
+        shouldShowActionBar(true)
 
         featuredCategoryRecyclerView.layoutManager = GridLayoutManager(context, 3, GridLayoutManager.VERTICAL, false)
         featuredCategoryRecyclerView.adapter = adapter
@@ -69,11 +65,7 @@ class FeaturedMediaCategoryFragment(val featuredCategory: FeaturedCategory) : Fr
     }
 
     override fun onDestroyView() {
-        try {
-            val activity = view?.context as AppCompatActivity
-            activity?.supportActionBar!!.hide()
-        } catch (e: NullPointerException) {
-        }
+        shouldShowActionBar(false)
         super.onDestroyView()
     }
 
@@ -85,6 +77,22 @@ class FeaturedMediaCategoryFragment(val featuredCategory: FeaturedCategory) : Fr
             FeaturedCategory.TrendingMovies -> viewModel.trendingMoviesPagedList
 
             else -> viewModel.nowPlayingMoviesPagedList
+        }
+    }
+
+    fun shouldShowActionBar(show: Boolean) {
+        try {
+            val activity = view?.context as AppCompatActivity
+            activity?.supportActionBar?.title = featuredCategory.description
+
+            if(show) {
+                activity?.supportActionBar!!.show()
+            } else {
+                activity?.supportActionBar!!.hide()
+            }
+
+
+        } catch (e: Exception) {
         }
     }
 }

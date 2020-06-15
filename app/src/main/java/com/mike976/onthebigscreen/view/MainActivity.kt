@@ -59,6 +59,8 @@ class MainActivity : AppCompatActivity() {
         } catch (e: NullPointerException) {
         }
     }
+    
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

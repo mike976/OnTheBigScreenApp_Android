@@ -14,7 +14,7 @@ open class Media (
     @SerializedName("release_date") val releaseDate: String = "",
     @SerializedName("poster_path") val posterPath: String = "",
     @SerializedName("backdrop_path") val backdropPath: String = "",
-    @SerializedName("vote_average") val voteAverage: Double = 0.0,
+    @SerializedName("vote_average") val voteAverage: Float = 0.toFloat(),
     @SerializedName("media_type") val search_by_mediaType: String = "unknown",
     private val _mediaType:MediaType = MediaType.None
 ) {
@@ -56,10 +56,10 @@ open class Media (
 
     open val formattedReleaseYear: String
         get() {
-            if (search_by_mediaType == "movie") {
+            if (search_by_mediaType == "movie" && !releaseDate.isEmpty()) {
                 val date = LocalDate.parse(releaseDate)
                 return date.format(DateTimeFormatter.ofPattern("yyyy"))
-            } else if (search_by_mediaType == "tv") {
+            } else if (search_by_mediaType == "tv" && !firstAirDate.isEmpty()) {
                 val date = LocalDate.parse(firstAirDate)
                 return date.format(DateTimeFormatter.ofPattern("yyyy"))
             } else {
