@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.mike976.onthebigscreen.view.fragment.FeaturedMediaFragment"
+    tools:context="com.mike976.onthebigscreen.view.fragment.featured.FeaturedMediaFragment"
     android:background="@color/colorPrimaryDark">
 
     <FrameLayout
@@ -20,27 +20,26 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ImageView
-                android:id="@+id/headerImage"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/featured_header_image_height"
-                android:background="@color/colorPrimaryDark"
-                android:contentDescription="@string/content_description_featured_header_image"
-                android:scaleType="centerCrop"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/featured_header_image1" />
+<!--            <ImageView-->
+<!--                android:id="@+id/headerImage"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="@dimen/featured_header_image_height"-->
+<!--                android:background="@color/colorPrimaryDark"-->
+<!--                android:contentDescription="@string/content_description_featured_header_image"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                app:srcCompat="@drawable/featured_header_image1" />-->
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/featuredRecyclerView"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_marginTop="@dimen/padding_half"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/headerImage">
+                app:layout_constraintTop_toTopOf="parent">
 
             </androidx.recyclerview.widget.RecyclerView>
 

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="160dp"
+    android:layout_height="170dp"
     android:background="@color/colorPrimaryDark"
     android:layout_marginBottom="20dp">
 
@@ -12,7 +12,8 @@
         android:id="@+id/featuredMediaRecyclerView"
         android:layout_marginLeft="8dp"
         android:layout_width="0dp"
-        android:layout_height="160dp"
+        android:layout_height="170dp"
+        android:layout_marginTop="@dimen/padding_half"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toStartOf="@id/featuredHeaderTextView"/>

@@ -1,21 +1,14 @@
 package com.example.onthebigscreen
 
 import android.os.Bundle
-import androidx.annotation.Nullable
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import androidx.paging.PagedList
-import com.example.onthebigscreen.featured.model.Media
-import com.example.onthebigscreen.featured.model.MediaType
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.mike976.onthebigscreen.app.component
-import com.mike976.onthebigscreen.model.FeaturedCategory
-import com.mike976.onthebigscreen.view.fragment.AboutFragment
-import com.mike976.onthebigscreen.view.fragment.FeaturedMediaFragment
-import com.mike976.onthebigscreen.view.fragment.SearchMediaFragment
+import com.mike976.onthebigscreen.view.fragment.about.AboutFragment
+import com.mike976.onthebigscreen.view.fragment.featured.FeaturedMediaFragment
+import com.mike976.onthebigscreen.view.fragment.search.SearchMediaFragment
 import com.mike976.onthebigscreen.viewmodel.MainViewModel
 import com.mike976.onthebigscreen.viewmodel.MainViewModelFactory
 import kotlinx.android.synthetic.main.activity_main.*
