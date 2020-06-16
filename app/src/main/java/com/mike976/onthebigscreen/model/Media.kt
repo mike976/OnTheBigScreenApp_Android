@@ -25,9 +25,14 @@ open class Media (
                 return MediaType.Movie
             } else if (search_by_mediaType == "tv") {
                 return MediaType.TVShow
+            } else if (!firstAirDate.isNullOrEmpty()) {
+                return MediaType.TVShow
+            } else if (!releaseDate.isNullOrEmpty()) {
+                return MediaType.Movie
             } else {
                 return MediaType.None
             }
+
         }
 
     open val title: String

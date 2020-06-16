@@ -45,10 +45,10 @@ class SearchMediaAdapter(private val searchResults: MutableList<Media>) : Recycl
 
             var fillColor: String? = null
             if(media.mediaType == MediaType.TVShow) {
-                itemView.mediaTypeTextView.text = "TV Show"
+                itemView.mediaTypeTextView.text = itemView.context.getString(R.string.media_type_tv)
                 fillColor = "#ff8f00"
             } else if(media.mediaType == MediaType.Movie) {
-                itemView.mediaTypeTextView.text = "Movie"
+                itemView.mediaTypeTextView.text = itemView.context.getString(R.string.media_type_movie)
                 fillColor = "#76ff03"
             }
 
@@ -59,10 +59,7 @@ class SearchMediaAdapter(private val searchResults: MutableList<Media>) : Recycl
 
             val activity = itemView.context as AppCompatActivity
             activity.supportFragmentManager.beginTransaction().replace(R.id.searchMediaContainer,
-                MediaDetailFragment(
-                    media.id,
-                    media.mediaType
-                )
+                MediaDetailFragment(media)
             )
                 .addToBackStack(SearchMediaFragment.javaClass.name)
                 .commit()

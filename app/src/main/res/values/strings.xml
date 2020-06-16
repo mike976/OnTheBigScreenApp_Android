@@ -11,4 +11,6 @@
     <string name="featured_category_trendingmovies">Trending Movies</string>
     <string name="featured_category_trending_tvshows">Trending Tv</string>
     <string name="search_info">Search Thousands of films, old or new on TmDb</string>
+    <string name="media_type_tv">TV Show</string>
+    <string name="media_type_movie">Movie</string>
 </resources>

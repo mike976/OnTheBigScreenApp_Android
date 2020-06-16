@@ -52,19 +52,9 @@ class FeaturedMediaPagedCategoryAdapter(val mediaByCategory: MutableList<Media>)
 
         private fun navigateToMediaDetailFragment(media: Media) {
 
-            var mediaType = MediaType.None
-            if (media is Movie) {
-                mediaType = MediaType.Movie
-            }  else if (media is TvShow) {
-                mediaType = MediaType.TVShow
-            }
-
             val activity = itemView.context as AppCompatActivity
             activity.supportFragmentManager.beginTransaction().replace(R.id.featuredMediaContainer,
-                MediaDetailFragment(
-                    media.id,
-                    mediaType
-                )
+                MediaDetailFragment(media)
             )
                 .addToBackStack(FeaturedMediaFragment.javaClass.name)
                 .commit()
