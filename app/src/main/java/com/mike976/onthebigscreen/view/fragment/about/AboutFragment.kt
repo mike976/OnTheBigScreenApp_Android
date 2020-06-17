@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import com.example.onthebigscreen.BuildConfig
 import com.example.onthebigscreen.R
 import com.mike976.onthebigscreen.util.getProgressDrawable
@@ -24,6 +25,8 @@ class AboutFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+
+        hideActionBar()
         loadImages()
 
         val versionCode = BuildConfig.VERSION_CODE
@@ -79,4 +82,16 @@ class AboutFragment : Fragment() {
             data = Uri.parse("mailto:$emailAddr")
         })
 
+    fun hideActionBar() {
+        try {
+            val activity = view?.context as AppCompatActivity
+            activity?.supportActionBar!!.hide()
+        } catch (e: Exception) {
+        }
+    }
+
+    override fun onDestroyView() {
+        this.hideActionBar()
+        super.onDestroyView()
+    }
 }

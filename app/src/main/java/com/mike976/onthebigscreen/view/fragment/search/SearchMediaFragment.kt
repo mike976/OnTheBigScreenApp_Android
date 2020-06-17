@@ -53,12 +53,7 @@ class SearchMediaFragment : Fragment() {
 
         searchInfoTextView.visibility = View.VISIBLE
 
-
         viewModel = activity?.let { ViewModelProviders.of(it).get(MainViewModel::class.java) }!!
-
-        //TODO
-        //7. completed list item xml so it contains the relevant bindings to the media object
-                //including ratings control
 
         activity?.let {
             val dividerWidthInPixels = resources.getDimensionPixelSize(R.dimen.item_divider_height)
