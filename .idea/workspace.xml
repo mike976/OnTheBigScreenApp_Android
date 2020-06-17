@@ -21,18 +21,18 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/fragment/about/AboutFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/fragment/about/AboutFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/fragment/search/SearchMediaFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/fragment/search/SearchMediaFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_about.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_about.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_media_detail.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_media_detail.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="A3201809060126" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_3_API_29" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -57,8 +57,8 @@
         <option value="valueResourceFile" />
         <option value="Kotlin File" />
         <option value="resourceFile" />
-        <option value="Kotlin Class" />
         <option value="layoutResourceFile" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -72,8 +72,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_3_API_29" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-06-12T19:55:09.739Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="A3201809060126" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-06-17T13:34:16.764Z" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
@@ -216,10 +216,10 @@
       <screen x="0" y="23" width="1440" height="810" />
     </state>
     <state x="315" y="23" width="776" height="810" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1440.810@0.23.1440.810" timestamp="1591709562194" />
-    <state x="454" y="180" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1592222633531">
+    <state x="454" y="180" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1592400114596">
       <screen x="0" y="23" width="1440" height="807" />
     </state>
-    <state x="454" y="180" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.807@0.23.1440.807" timestamp="1592222633531" />
+    <state x="454" y="180" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.807@0.23.1440.807" timestamp="1592400114596" />
     <state x="428" y="65" width="655" height="685" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1592234191689">
       <screen x="0" y="23" width="1440" height="807" />
     </state>
@@ -234,10 +234,10 @@
     </state>
     <state x="304" y="188" key="AndroidCreateResourceFileDialog/0.23.1440.807@0.23.1440.807" timestamp="1592380155462" />
     <state x="304" y="189" key="AndroidCreateResourceFileDialog/0.23.1440.810@0.23.1440.810" timestamp="1591794520942" />
-    <state x="777" y="376" key="AndroidCreateXmlResourceDialog" timestamp="1592321523202">
+    <state x="777" y="376" key="AndroidCreateXmlResourceDialog" timestamp="1592400675784">
       <screen x="0" y="23" width="1440" height="807" />
     </state>
-    <state x="777" y="376" key="AndroidCreateXmlResourceDialog/0.23.1440.807@0.23.1440.807" timestamp="1592321523202" />
+    <state x="777" y="376" key="AndroidCreateXmlResourceDialog/0.23.1440.807@0.23.1440.807" timestamp="1592400675784" />
     <state x="571" y="281" key="AndroidCreateXmlResourceDialog/0.23.1440.810@0.23.1440.810" timestamp="1591780888438" />
     <state x="572" y="199" key="AndroidProcessChooserDialog" timestamp="1591794960827">
       <screen x="0" y="23" width="1440" height="810" />
@@ -287,10 +287,10 @@
       <screen x="0" y="23" width="1440" height="807" />
     </state>
     <state width="1384" height="257" key="GridCell.Tab.1.right/0.23.1440.807@0.23.1440.807" timestamp="1592325711746" />
-    <state x="504" y="211" key="chooseDestDirectoryDialog" timestamp="1592392031406">
+    <state x="504" y="211" key="chooseDestDirectoryDialog" timestamp="1592400103033">
       <screen x="0" y="23" width="1440" height="807" />
     </state>
-    <state x="504" y="211" key="chooseDestDirectoryDialog/0.23.1440.807@0.23.1440.807" timestamp="1592392031406" />
+    <state x="504" y="211" key="chooseDestDirectoryDialog/0.23.1440.807@0.23.1440.807" timestamp="1592400103033" />
     <state x="352" y="239" key="com.intellij.ide.util.TipDialog" timestamp="1592078138893">
       <screen x="0" y="23" width="1440" height="807" />
     </state>

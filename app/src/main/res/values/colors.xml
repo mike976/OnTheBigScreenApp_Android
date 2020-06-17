@@ -9,8 +9,9 @@
     <color name="mediaType_Movie">#76ff03</color>
     <color name="golden">#ffd600</color>
     <color name="divider_color">#FFFFFF</color>
+    <color name="splash_background">#4db6ac</color>
 
-<!--    <color name="colorPrimary">#6200EE</color>-->
+    <!--    <color name="colorPrimary">#6200EE</color>-->
 <!--    <color name="colorPrimaryDark">#3700B3</color>-->
 <!--    <color name="colorAccent">#03DAC5</color>-->
 </resources>
