@@ -1,13 +1,9 @@
 package com.mike976.onthebigscreen.view.paging
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.Observer
 import androidx.paging.PageKeyedDataSource
-import com.example.onthebigscreen.featured.model.Media
-import com.example.onthebigscreen.network.ApiError
-import com.example.onthebigscreen.network.ApiResponseMessage
-import com.example.onthebigscreen.network.IApiClient
-import com.example.onthebigscreen.network.MediaApiResponse
+import com.mike976.onthebigscreen.model.Media
+import com.mike976.onthebigscreen.network.IApiClient
+import com.mike976.onthebigscreen.network.response.MediaApiResponse
 import com.mike976.onthebigscreen.model.FeaturedCategory
 import retrofit2.Call
 import retrofit2.Callback

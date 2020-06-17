@@ -1,9 +1,10 @@
-package com.example.onthebigscreen
+package com.mike976.onthebigscreen.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
+import com.example.onthebigscreen.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.mike976.onthebigscreen.app.component
 import com.mike976.onthebigscreen.view.fragment.about.AboutFragment

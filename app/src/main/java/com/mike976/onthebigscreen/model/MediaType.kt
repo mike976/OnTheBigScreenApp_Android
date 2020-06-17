@@ -1,4 +1,4 @@
-package com.example.onthebigscreen.featured.model
+package com.mike976.onthebigscreen.model
 
 enum class MediaType {
     Movie,

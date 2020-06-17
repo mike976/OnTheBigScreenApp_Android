@@ -11,9 +11,9 @@ import androidx.lifecycle.Observer
 import androidx.paging.PagedList
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.onthebigscreen.R
-import com.example.onthebigscreen.featured.model.Media
-import com.example.onthebigscreen.featured.model.Movie
-import com.example.onthebigscreen.featured.model.TvShow
+import com.mike976.onthebigscreen.model.Media
+import com.mike976.onthebigscreen.model.Movie
+import com.mike976.onthebigscreen.model.TvShow
 import com.example.onthebigscreen.network.ApiError
 import com.example.onthebigscreen.network.ApiResponseMessage
 import com.example.onthebigscreen.network.ApiResponseStatus

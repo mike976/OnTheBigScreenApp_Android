@@ -1,13 +1,12 @@
 package com.example.onthebigscreen.service
 
 import androidx.lifecycle.LiveData
-import com.example.onthebigscreen.featured.model.Media
-import com.example.onthebigscreen.featured.model.Movie
-import com.example.onthebigscreen.featured.model.TvShow
+import com.mike976.onthebigscreen.model.Media
+import com.mike976.onthebigscreen.model.Movie
+import com.mike976.onthebigscreen.model.TvShow
 import com.example.onthebigscreen.network.ApiResponseMessage
 import com.mike976.onthebigscreen.network.response.MediaCreditsAPIResponse
 import com.mike976.onthebigscreen.network.response.MediaDetailApiResponse
-import com.mike976.onthebigscreen.view.paging.MediaDataSourceFactory
 
 interface ITmDbService {
 

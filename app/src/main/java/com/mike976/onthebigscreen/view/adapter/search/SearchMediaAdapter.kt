@@ -5,8 +5,8 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.onthebigscreen.R
-import com.example.onthebigscreen.featured.model.Media
-import com.example.onthebigscreen.featured.model.MediaType
+import com.mike976.onthebigscreen.model.Media
+import com.mike976.onthebigscreen.model.MediaType
 import com.mike976.onthebigscreen.extensions.inflate
 import com.mike976.onthebigscreen.util.applyRoundedCorners
 import com.mike976.onthebigscreen.util.getProgressDrawable

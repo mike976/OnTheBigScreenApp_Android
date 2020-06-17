@@ -1,13 +1,11 @@
 package com.mike976.onthebigscreen.viewmodel
 
 import androidx.lifecycle.LiveData
-import androidx.paging.PagedList
-import com.example.onthebigscreen.featured.model.Media
-import com.example.onthebigscreen.featured.model.MediaType
-import com.example.onthebigscreen.featured.model.Movie
-import com.example.onthebigscreen.featured.model.TvShow
+import com.mike976.onthebigscreen.model.Media
+import com.mike976.onthebigscreen.model.MediaType
+import com.mike976.onthebigscreen.model.Movie
+import com.mike976.onthebigscreen.model.TvShow
 import com.example.onthebigscreen.network.ApiResponseMessage
-import com.mike976.onthebigscreen.model.FeaturedCategory
 import com.mike976.onthebigscreen.model.MoviesListType
 import com.mike976.onthebigscreen.network.response.MediaCreditsAPIResponse
 import com.mike976.onthebigscreen.network.response.MediaDetailApiResponse

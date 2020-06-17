@@ -1,4 +1,4 @@
-package com.example.onthebigscreen.featured.model
+package com.mike976.onthebigscreen.model
 
 import android.net.Uri
 import com.google.gson.annotations.SerializedName
@@ -16,7 +16,7 @@ open class Media (
     @SerializedName("backdrop_path") val backdropPath: String = "",
     @SerializedName("vote_average") val voteAverage: Float = 0.toFloat(),
     @SerializedName("media_type") val search_by_mediaType: String = "unknown",
-    private val _mediaType:MediaType = MediaType.None
+    private val _mediaType: MediaType = MediaType.None
 ) {
 
     open val mediaType: MediaType

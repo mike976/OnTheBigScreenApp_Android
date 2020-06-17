@@ -1,6 +1,7 @@
-package com.example.onthebigscreen.featured.model
+package com.mike976.onthebigscreen.model
 
-import com.google.gson.annotations.SerializedName
+import com.mike976.onthebigscreen.model.Media
+import com.mike976.onthebigscreen.model.MediaType
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 

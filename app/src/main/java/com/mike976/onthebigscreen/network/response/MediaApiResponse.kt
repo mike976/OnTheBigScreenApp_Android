@@ -1,6 +1,6 @@
-package com.example.onthebigscreen.network
+package com.mike976.onthebigscreen.network.response
 
-import com.example.onthebigscreen.featured.model.Media
+import com.mike976.onthebigscreen.model.Media
 import com.google.gson.annotations.SerializedName
 
 data class MediaApiResponse(

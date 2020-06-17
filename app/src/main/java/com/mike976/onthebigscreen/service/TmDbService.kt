@@ -1,20 +1,19 @@
-package com.example.onthebigscreen.service
+package com.mike976.onthebigscreen.service
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.onthebigscreen.featured.model.Media
-import com.example.onthebigscreen.featured.model.Movie
-import com.example.onthebigscreen.featured.model.TvShow
+import com.mike976.onthebigscreen.model.Media
+import com.mike976.onthebigscreen.model.Movie
+import com.mike976.onthebigscreen.model.TvShow
 import com.example.onthebigscreen.network.*
-import com.mike976.onthebigscreen.app.component
+import com.example.onthebigscreen.service.ITmDbService
+import com.mike976.onthebigscreen.network.IApiClient
+import com.mike976.onthebigscreen.network.response.MediaApiResponse
 import com.mike976.onthebigscreen.network.response.MediaCreditsAPIResponse
 import com.mike976.onthebigscreen.network.response.MediaDetailApiResponse
-import com.mike976.onthebigscreen.view.paging.MediaDataSourceFactory
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Inject
 
 @Suppress("UNCHECKED_CAST")

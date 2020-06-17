@@ -1,8 +1,8 @@
 package com.mike976.onthebigscreen.di
 
-import com.example.onthebigscreen.network.IApiClient
+import com.mike976.onthebigscreen.network.IApiClient
 import com.example.onthebigscreen.service.ITmDbService
-import com.example.onthebigscreen.service.TmDbService
+import com.mike976.onthebigscreen.service.TmDbService
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton

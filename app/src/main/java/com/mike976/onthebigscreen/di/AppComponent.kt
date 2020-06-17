@@ -1,11 +1,9 @@
 package com.mike976.onthebigscreen.di
 
-import com.example.onthebigscreen.MainActivity
-import com.example.onthebigscreen.service.ITmDbService
+import com.mike976.onthebigscreen.view.MainActivity
 import com.mike976.onthebigscreen.view.paging.MediaDataSourceFactory
 import com.mike976.onthebigscreen.viewmodel.MainViewModel
 import dagger.Component
-import dagger.Provides
 import javax.inject.Singleton
 
 //DAGGER IOC CONTAINER

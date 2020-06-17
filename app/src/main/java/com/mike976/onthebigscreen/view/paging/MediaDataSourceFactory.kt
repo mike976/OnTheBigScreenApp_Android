@@ -1,10 +1,9 @@
 package com.mike976.onthebigscreen.view.paging
 
 import androidx.paging.DataSource
-import androidx.paging.PageKeyedDataSource
-import com.example.onthebigscreen.featured.model.Media
-import com.example.onthebigscreen.featured.model.MediaType
-import com.example.onthebigscreen.network.IApiClient
+import com.mike976.onthebigscreen.model.Media
+import com.mike976.onthebigscreen.model.MediaType
+import com.mike976.onthebigscreen.network.IApiClient
 import com.mike976.onthebigscreen.app.component
 import com.mike976.onthebigscreen.model.FeaturedCategory
 import javax.inject.Inject

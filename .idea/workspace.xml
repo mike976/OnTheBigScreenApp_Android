@@ -21,23 +21,37 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/proguard-rules.pro" beforeDir="false" afterPath="$PROJECT_DIR$/app/proguard-rules.pro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/di/NetworkModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/di/NetworkModule.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/di/ServiceModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/di/ServiceModule.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/di/ViewModelModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/di/ViewModelModule.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/model/Dates.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/model/Dates.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/model/Media.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/model/Media.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/model/MediaType.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/model/MediaType.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/model/Movie.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/model/Movie.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/model/TvShow.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/model/TvShow.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/network/IApiClient.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/network/IApiClient.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/network/response/MediaApiResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/network/response/MediaApiResponse.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/service/ITmDbService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/service/ITmDbService.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/service/TmDbService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/service/TmDbService.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/adapter/featured/FeaturedMediaAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/adapter/featured/FeaturedMediaAdapter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/adapter/featured/FeaturedMediaCategoryAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/adapter/featured/FeaturedMediaCategoryAdapter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/adapter/featured/FeaturedMediaPagedCategoryAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/adapter/featured/FeaturedMediaPagedCategoryAdapter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/adapter/search/SearchMediaAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/adapter/search/SearchMediaAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/fragment/about/AboutFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/fragment/about/AboutFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/fragment/featured/FeaturedMediaCategoryFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/fragment/featured/FeaturedMediaCategoryFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/fragment/featured/FeaturedMediaFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/fragment/featured/FeaturedMediaFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/fragment/media/MediaDetailFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/fragment/media/MediaDetailFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/fragment/search/SearchMediaFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/fragment/search/SearchMediaFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/paging/MediaDataSource.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/paging/MediaDataSource.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/paging/MediaDataSourceFactory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/view/paging/MediaDataSourceFactory.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/viewmodel/IMainViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/viewmodel/IMainViewModel.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/viewmodel/MainViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/viewmodel/MainViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/viewmodel/MainViewModelFactory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/mike976/onthebigscreen/viewmodel/MainViewModelFactory.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/featured_header_image1.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +88,11 @@
       </list>
     </option>
   </component>
+  <component name="GenerateSignedApkSettings">
+    <option name="EXPORT_PRIVATE_KEY" value="false" />
+    <option name="KEY_STORE_PATH" value="$PROJECT_DIR$/publish/mike976_droid_keystore" />
+    <option name="KEY_ALIAS" value="mike976_droid_keystore" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -84,10 +103,14 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="BundleExportedModule" value="app" />
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="A3201809060126" />
     <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-06-17T13:34:16.764Z" />
+    <property name="ExportApk.ApkPath" value="$PROJECT_DIR$/publish" />
+    <property name="ExportApk.BuildVariants" value="release" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="ScreenshotViewer.SavePath" value="$PROJECT_DIR$/publish/release" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
@@ -263,25 +286,25 @@
       <screen x="0" y="23" width="1440" height="807" />
     </state>
     <state x="503" y="175" key="FileChooserDialogImpl/0.23.1440.807@0.23.1440.807" timestamp="1592292755388" />
-    <state width="1384" height="221" key="GridCell.Tab.0.bottom" timestamp="1592394457660">
+    <state width="1384" height="221" key="GridCell.Tab.0.bottom" timestamp="1592412896902">
       <screen x="0" y="23" width="1440" height="807" />
     </state>
-    <state width="1384" height="221" key="GridCell.Tab.0.bottom/0.23.1440.807@0.23.1440.807" timestamp="1592394457660" />
+    <state width="1384" height="221" key="GridCell.Tab.0.bottom/0.23.1440.807@0.23.1440.807" timestamp="1592412896902" />
     <state width="1384" height="164" key="GridCell.Tab.0.bottom/0.23.1440.810@0.23.1440.810" timestamp="1591794312229" />
-    <state width="1384" height="221" key="GridCell.Tab.0.center" timestamp="1592394457658">
+    <state width="1384" height="221" key="GridCell.Tab.0.center" timestamp="1592412896902">
       <screen x="0" y="23" width="1440" height="807" />
     </state>
-    <state width="1384" height="221" key="GridCell.Tab.0.center/0.23.1440.807@0.23.1440.807" timestamp="1592394457658" />
+    <state width="1384" height="221" key="GridCell.Tab.0.center/0.23.1440.807@0.23.1440.807" timestamp="1592412896902" />
     <state width="1384" height="164" key="GridCell.Tab.0.center/0.23.1440.810@0.23.1440.810" timestamp="1591794312228" />
-    <state width="1384" height="221" key="GridCell.Tab.0.left" timestamp="1592394457658">
+    <state width="1384" height="221" key="GridCell.Tab.0.left" timestamp="1592412896902">
       <screen x="0" y="23" width="1440" height="807" />
     </state>
-    <state width="1384" height="221" key="GridCell.Tab.0.left/0.23.1440.807@0.23.1440.807" timestamp="1592394457658" />
+    <state width="1384" height="221" key="GridCell.Tab.0.left/0.23.1440.807@0.23.1440.807" timestamp="1592412896902" />
     <state width="1384" height="164" key="GridCell.Tab.0.left/0.23.1440.810@0.23.1440.810" timestamp="1591794312227" />
-    <state width="1384" height="221" key="GridCell.Tab.0.right" timestamp="1592394457658">
+    <state width="1384" height="221" key="GridCell.Tab.0.right" timestamp="1592412896902">
       <screen x="0" y="23" width="1440" height="807" />
     </state>
-    <state width="1384" height="221" key="GridCell.Tab.0.right/0.23.1440.807@0.23.1440.807" timestamp="1592394457658" />
+    <state width="1384" height="221" key="GridCell.Tab.0.right/0.23.1440.807@0.23.1440.807" timestamp="1592412896902" />
     <state width="1384" height="164" key="GridCell.Tab.0.right/0.23.1440.810@0.23.1440.810" timestamp="1591794312228" />
     <state width="1384" height="257" key="GridCell.Tab.1.bottom" timestamp="1592325711746">
       <screen x="0" y="23" width="1440" height="807" />
@@ -299,6 +322,10 @@
       <screen x="0" y="23" width="1440" height="807" />
     </state>
     <state width="1384" height="257" key="GridCell.Tab.1.right/0.23.1440.807@0.23.1440.807" timestamp="1592325711746" />
+    <state x="140" y="23" key="ScreenshotViewer.Dimensions" timestamp="1592409939079">
+      <screen x="0" y="23" width="1440" height="807" />
+    </state>
+    <state x="140" y="23" key="ScreenshotViewer.Dimensions/0.23.1440.807@0.23.1440.807" timestamp="1592409939079" />
     <state x="504" y="211" key="chooseDestDirectoryDialog" timestamp="1592400103033">
       <screen x="0" y="23" width="1440" height="807" />
     </state>
@@ -308,10 +335,10 @@
     </state>
     <state x="352" y="239" key="com.intellij.ide.util.TipDialog/0.23.1440.807@0.23.1440.807" timestamp="1592078138893" />
     <state x="352" y="240" key="com.intellij.ide.util.TipDialog/0.23.1440.810@0.23.1440.810" timestamp="1591709253182" />
-    <state x="369" y="182" width="862" height="488" key="find.popup" timestamp="1592407002405">
+    <state x="369" y="182" width="950" height="488" key="find.popup" timestamp="1592413356821">
       <screen x="0" y="23" width="1440" height="807" />
     </state>
-    <state x="369" y="182" width="862" height="488" key="find.popup/0.23.1440.807@0.23.1440.807" timestamp="1592407002405" />
+    <state x="369" y="182" width="950" height="488" key="find.popup/0.23.1440.807@0.23.1440.807" timestamp="1592413356821" />
     <state x="369" y="183" width="693" height="488" key="find.popup/0.23.1440.810@0.23.1440.810" timestamp="1591718080773" />
     <state x="263" y="176" key="psd.add.library.dependency.panel.dimension" timestamp="1591950539183">
       <screen x="0" y="23" width="1440" height="807" />

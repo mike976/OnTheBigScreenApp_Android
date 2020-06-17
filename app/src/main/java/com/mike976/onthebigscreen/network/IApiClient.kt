@@ -1,6 +1,7 @@
-package com.example.onthebigscreen.network
+package com.mike976.onthebigscreen.network
 
 
+import com.mike976.onthebigscreen.network.response.MediaApiResponse
 import com.mike976.onthebigscreen.network.response.MediaCreditsAPIResponse
 import com.mike976.onthebigscreen.network.response.MediaDetailApiResponse
 import retrofit2.Call
@@ -65,30 +66,35 @@ interface IApiClient {
     @GET(SEARCH_MOVIES)
     fun getSearchMovies(@Query(QUERY_KEY) query: String,
                         @Query(API_KEY)key: String = API_KEY_VALUE,
-                        @Query(LANGUAGE_KEY) language:String = LANGUAGE_VALUE): Call<MediaApiResponse>
+                        @Query(LANGUAGE_KEY) language:String = LANGUAGE_VALUE
+    ): Call<MediaApiResponse>
 
 
     @GET("$MOVIE/{id}")
     fun getMovieDetail(@Path("id") id:String,
-                        @Query(APPEND_TO_RESPONSE_KEY) appendToResponse:String = APPEND_TO_RESPONSE_VALUE,
-                        @Query(API_KEY)key: String = API_KEY_VALUE,
-                        @Query(LANGUAGE_KEY) language:String = LANGUAGE_VALUE) : Call<MediaDetailApiResponse>
+                       @Query(APPEND_TO_RESPONSE_KEY) appendToResponse:String = APPEND_TO_RESPONSE_VALUE,
+                       @Query(API_KEY)key: String = API_KEY_VALUE,
+                       @Query(LANGUAGE_KEY) language:String = LANGUAGE_VALUE
+    ) : Call<MediaDetailApiResponse>
 
     @GET("$TVSHOW/{id}")
     fun getTVShowDetail(@Path("id") id:String,
                         @Query(APPEND_TO_RESPONSE_KEY) appendToResponse:String = APPEND_TO_RESPONSE_VALUE,
                         @Query(API_KEY)key: String = API_KEY_VALUE,
-                        @Query(LANGUAGE_KEY) language:String = LANGUAGE_VALUE) : Call<MediaDetailApiResponse>
+                        @Query(LANGUAGE_KEY) language:String = LANGUAGE_VALUE
+    ) : Call<MediaDetailApiResponse>
 
     @GET("$MOVIE/{id}/credits")
     fun getMovieCredits(@Path("id") id:String,
-                       @Query(API_KEY)key: String = API_KEY_VALUE,
-                       @Query(LANGUAGE_KEY) language:String = LANGUAGE_VALUE) : Call<MediaCreditsAPIResponse>
+                        @Query(API_KEY)key: String = API_KEY_VALUE,
+                        @Query(LANGUAGE_KEY) language:String = LANGUAGE_VALUE
+    ) : Call<MediaCreditsAPIResponse>
 
     @GET("$TVSHOW/{id}/credits")
     fun getTVShowCredits(@Path("id") id:String,
-                        @Query(API_KEY)key: String = API_KEY_VALUE,
-                        @Query(LANGUAGE_KEY) language:String = LANGUAGE_VALUE) : Call<MediaCreditsAPIResponse>
+                         @Query(API_KEY)key: String = API_KEY_VALUE,
+                         @Query(LANGUAGE_KEY) language:String = LANGUAGE_VALUE
+    ) : Call<MediaCreditsAPIResponse>
 
 
 }

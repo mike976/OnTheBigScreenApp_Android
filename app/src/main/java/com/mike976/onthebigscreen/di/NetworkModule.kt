@@ -1,6 +1,6 @@
 package com.mike976.onthebigscreen.di
 
-import com.example.onthebigscreen.network.IApiClient
+import com.mike976.onthebigscreen.network.IApiClient
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit

@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".MainActivity">
+        <activity android:name="com.mike976.onthebigscreen.view.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

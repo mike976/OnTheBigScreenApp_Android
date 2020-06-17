@@ -6,9 +6,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.onthebigscreen.R
-import com.example.onthebigscreen.featured.model.Media
-import com.example.onthebigscreen.featured.model.Movie
-import com.example.onthebigscreen.featured.model.TvShow
+import com.mike976.onthebigscreen.model.Media
+import com.mike976.onthebigscreen.model.Movie
+import com.mike976.onthebigscreen.model.TvShow
 import com.mike976.onthebigscreen.extensions.inflate
 import com.mike976.onthebigscreen.model.FeaturedCategory
 import com.mike976.onthebigscreen.view.BaseViewHolder
