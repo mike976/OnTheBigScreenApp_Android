@@ -40,7 +40,7 @@ class AboutFragment : Fragment() {
 
         activity?.let {
             val progressDrawable = getProgressDrawable(it)
-            appIcon.setImageResource(R.drawable.about)
+            appIcon.setImageResource(R.drawable.ic_launcher_round)
 
             tmDbIcon.setImageResource(R.drawable.tmdb_logo)
             gitHubImage.setImageResource(R.drawable.github)
