@@ -38,16 +38,12 @@ class FeaturedMediaPagedCategoryAdapter(val mediaByCategory: MutableList<Media>)
             if(media != null) {
                 this.media = media
 
-                if(media.posterPath != null) {
-                    itemView.mediaImage.loadImage(media.posterUrl, progressDrawable)
-                }
+                itemView.mediaImage.loadImage(media.posterUrl, progressDrawable)
             }
         }
 
         override fun onClick(v: View?) {
-            if (this.media != null) {
-                navigateToMediaDetailFragment(this.media)
-            }
+            navigateToMediaDetailFragment(this.media)
         }
 
         private fun navigateToMediaDetailFragment(media: Media) {
@@ -56,7 +52,7 @@ class FeaturedMediaPagedCategoryAdapter(val mediaByCategory: MutableList<Media>)
             activity.supportFragmentManager.beginTransaction().replace(R.id.featuredMediaContainer,
                 MediaDetailFragment(media)
             )
-                .addToBackStack(FeaturedMediaFragment.javaClass.name)
+                .addToBackStack(FeaturedMediaFragment::class.java.name)
                 .commit()
         }
 
@@ -78,11 +74,10 @@ class MediaDiffUtilCallback : DiffUtil.ItemCallback<Media>() {
 
 
     override fun areItemsTheSame(oldItem: Media, newItem: Media): Boolean {
-        return oldItem?.id == newItem?.id
+        return oldItem.id == newItem.id
     }
 
     override fun areContentsTheSame(oldItem: Media, newItem: Media): Boolean {
-        //return oldItem?.id == newItem?.id
         return oldItem.equals(newItem)
     }
 }

@@ -30,15 +30,11 @@ class SearchMediaAdapter(private val searchResults: MutableList<Media>) : Recycl
             itemView.releaseYearTextView.text = "Year: ${media.formattedReleaseYear}"
 
             itemView.setOnClickListener{
-                if(this.media != null) {
-                    navigateToMediaDetailFragment(this.media)
-                }
+                navigateToMediaDetailFragment(this.media)
             }
 
             //apply poster
-            if(media.posterPath != null) {
-                itemView.posterImage.loadImage(media.posterUrl, progressDrawable)
-            }
+            itemView.posterImage.loadImage(media.posterUrl, progressDrawable)
 
             //apply ratings
             itemView.mediaRatingsBar.rating = (media.voteAverage * 5 / 10)
@@ -61,7 +57,7 @@ class SearchMediaAdapter(private val searchResults: MutableList<Media>) : Recycl
             activity.supportFragmentManager.beginTransaction().replace(R.id.searchMediaContainer,
                 MediaDetailFragment(media)
             )
-                .addToBackStack(SearchMediaFragment.javaClass.name)
+                .addToBackStack(SearchMediaFragment::class.java.name)
                 .commit()
         }
 

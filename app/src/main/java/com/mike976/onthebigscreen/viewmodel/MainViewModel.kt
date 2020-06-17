@@ -21,10 +21,10 @@ import com.mike976.onthebigscreen.view.paging.MediaDataSourceFactory
 
 class MainViewModel (private val service: ITmDbService) : ViewModel(), IMainViewModel {
 
-    lateinit var nowPlayingMoviesPagedList: LiveData<PagedList<Media>>
-    lateinit var upComingMoviesPagedList: LiveData<PagedList<Media>>
-    lateinit var trendingMoviesPagedList: LiveData<PagedList<Media>>
-    lateinit var trendingTvShowsPagedList: LiveData<PagedList<Media>>
+    var nowPlayingMoviesPagedList: LiveData<PagedList<Media>>
+    var upComingMoviesPagedList: LiveData<PagedList<Media>>
+    var trendingMoviesPagedList: LiveData<PagedList<Media>>
+    var trendingTvShowsPagedList: LiveData<PagedList<Media>>
 
     var counter = 0
 

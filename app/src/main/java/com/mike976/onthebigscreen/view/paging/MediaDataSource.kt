@@ -46,7 +46,7 @@ class MediaDataSource(private val featuredCategory: FeaturedCategory, private va
                     call: Call<MediaApiResponse>,
                     response: Response<MediaApiResponse>
                 ) {
-                    if (response != null && response.isSuccessful) {
+                    if (response.isSuccessful) {
                         callback.onResult(response.body()!!.results, null, IPagedDataSource.FIRST_PAGE + 1)
 
                     }

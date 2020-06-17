@@ -39,7 +39,6 @@ class AboutFragment : Fragment() {
     private fun loadImages() {
 
         activity?.let {
-            val progressDrawable = getProgressDrawable(it)
             appIcon.setImageResource(R.drawable.ic_launcher_round)
 
             tmDbIcon.setImageResource(R.drawable.tmdb_logo)
@@ -85,7 +84,7 @@ class AboutFragment : Fragment() {
     fun hideActionBar() {
         try {
             val activity = view?.context as AppCompatActivity
-            activity?.supportActionBar!!.hide()
+            activity.supportActionBar!!.hide()
         } catch (e: Exception) {
         }
     }

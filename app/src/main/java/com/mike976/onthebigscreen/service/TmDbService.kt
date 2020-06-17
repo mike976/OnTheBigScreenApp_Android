@@ -17,6 +17,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Inject
 
+@Suppress("UNCHECKED_CAST")
 class TmDbService @Inject constructor (private val api: IApiClient): ITmDbService {
 
     //TODO REFACTOR
@@ -29,7 +30,7 @@ class TmDbService @Inject constructor (private val api: IApiClient): ITmDbServic
                 call: Call<MediaApiResponse>,
                 response: Response<MediaApiResponse>
             ) {
-                if (response != null && response.isSuccessful) {
+                if (response.isSuccessful) {
                     liveData.value =
                         ApiResponseMessage.success(response.body()?.results as List<Movie>) //retrofit is able to convert response body to gists because the data class uses serializedname atribute to ensure can desrialize josn to data class
                 } else {
@@ -53,7 +54,7 @@ class TmDbService @Inject constructor (private val api: IApiClient): ITmDbServic
                 call: Call<MediaApiResponse>,
                 response: Response<MediaApiResponse>
             ) {
-                if (response != null && response.isSuccessful) {
+                if (response.isSuccessful) {
                     liveData.value =
                         ApiResponseMessage.success(response.body()?.results as List<Movie>) //retrofit is able to convert response body to gists because the data class uses serializedname atribute to ensure can desrialize josn to data class
                 } else {
@@ -78,7 +79,7 @@ class TmDbService @Inject constructor (private val api: IApiClient): ITmDbServic
                 call: Call<MediaApiResponse>,
                 response: Response<MediaApiResponse>
             ) {
-                if (response != null && response.isSuccessful) {
+                if (response.isSuccessful) {
                     liveData.value =
                         ApiResponseMessage.success(response.body()?.results as List<Movie>) //retrofit is able to convert response body to gists because the data class uses serializedname atribute to ensure can desrialize josn to data class
                 } else {
@@ -102,7 +103,7 @@ class TmDbService @Inject constructor (private val api: IApiClient): ITmDbServic
                 call: Call<MediaApiResponse>,
                 response: Response<MediaApiResponse>
             ) {
-                if (response != null && response.isSuccessful) {
+                if (response.isSuccessful) {
                     liveData.value =
                         ApiResponseMessage.success(response.body()?.results) //retrofit is able to convert response body to gists because the data class uses serializedname atribute to ensure can desrialize josn to data class
                 } else {
@@ -126,7 +127,7 @@ class TmDbService @Inject constructor (private val api: IApiClient): ITmDbServic
                 call: Call<MediaApiResponse>,
                 apiResponse: Response<MediaApiResponse>
             ) {
-                if (apiResponse != null && apiResponse.isSuccessful) {
+                if (apiResponse.isSuccessful) {
                     liveData.value =
                         ApiResponseMessage.success(apiResponse.body()?.results as List<TvShow>) //retrofit is able to convert response body to gists because the data class uses serializedname atribute to ensure can desrialize josn to data class
                 } else {
@@ -150,7 +151,7 @@ class TmDbService @Inject constructor (private val api: IApiClient): ITmDbServic
                 call: Call<MediaDetailApiResponse>,
                 apiResponse: Response<MediaDetailApiResponse>
             ) {
-                if (apiResponse != null && apiResponse.isSuccessful) {
+                if (apiResponse.isSuccessful) {
                     liveData.value =
                         ApiResponseMessage.success(apiResponse.body()) //retrofit is able to convert response body to gists because the data class uses serializedname atribute to ensure can desrialize josn to data class
                 } else {
@@ -174,7 +175,7 @@ class TmDbService @Inject constructor (private val api: IApiClient): ITmDbServic
                 call: Call<MediaDetailApiResponse>,
                 apiResponse: Response<MediaDetailApiResponse>
             ) {
-                if (apiResponse != null && apiResponse.isSuccessful) {
+                if (apiResponse.isSuccessful) {
                     liveData.value =
                         ApiResponseMessage.success(apiResponse.body()) //retrofit is able to convert response body to gists because the data class uses serializedname atribute to ensure can desrialize josn to data class
                 } else {
@@ -198,7 +199,7 @@ class TmDbService @Inject constructor (private val api: IApiClient): ITmDbServic
                 call: Call<MediaCreditsAPIResponse>,
                 apiResponse: Response<MediaCreditsAPIResponse>
             ) {
-                if (apiResponse != null && apiResponse.isSuccessful) {
+                if (apiResponse.isSuccessful) {
                     liveData.value =
                         ApiResponseMessage.success(apiResponse.body()) //retrofit is able to convert response body to gists because the data class uses serializedname atribute to ensure can desrialize josn to data class
                 } else {
@@ -222,7 +223,7 @@ class TmDbService @Inject constructor (private val api: IApiClient): ITmDbServic
                 call: Call<MediaCreditsAPIResponse>,
                 apiResponse: Response<MediaCreditsAPIResponse>
             ) {
-                if (apiResponse != null && apiResponse.isSuccessful) {
+                if (apiResponse.isSuccessful) {
                     liveData.value =
                         ApiResponseMessage.success(apiResponse.body()) //retrofit is able to convert response body to gists because the data class uses serializedname atribute to ensure can desrialize josn to data class
                 } else {

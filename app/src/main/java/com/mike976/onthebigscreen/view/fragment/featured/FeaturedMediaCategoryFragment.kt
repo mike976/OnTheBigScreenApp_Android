@@ -87,12 +87,12 @@ class FeaturedMediaCategoryFragment(val featuredCategory: FeaturedCategory) : Fr
     fun shouldShowActionBar(show: Boolean) {
         try {
             val activity = view?.context as AppCompatActivity
-            activity?.supportActionBar?.title = featuredCategory.description
+            activity.supportActionBar?.title = featuredCategory.description
 
             if(show) {
-                activity?.supportActionBar!!.show()
+                activity.supportActionBar!!.show()
             } else {
-                activity?.supportActionBar!!.hide()
+                activity.supportActionBar!!.hide()
             }
 
 

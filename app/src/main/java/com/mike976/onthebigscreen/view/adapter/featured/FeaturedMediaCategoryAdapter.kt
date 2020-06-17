@@ -33,19 +33,14 @@ class FeaturedMediaCategoryAdapter(val mediaByCategory: MutableList<Media>) : Re
             if(media != null) {
                 this.media = media
 
-                if(media.posterPath != null) {
-                    itemView.mediaImage.loadImage(media.posterUrl, progressDrawable)
-                }
+                itemView.mediaImage.loadImage(media.posterUrl, progressDrawable)
 
 
             }
         }
 
         override fun onClick(v: View?) {
-            if (this.media != null) {
-
-                navigateToMediaDetailFragment(this.media)
-            }
+            navigateToMediaDetailFragment(this.media)
         }
 
         private fun navigateToMediaDetailFragment(media: Media) {
@@ -54,7 +49,7 @@ class FeaturedMediaCategoryAdapter(val mediaByCategory: MutableList<Media>) : Re
             activity.supportFragmentManager.beginTransaction().replace(R.id.featuredMediaContainer,
                 MediaDetailFragment(media)
             )
-                .addToBackStack(FeaturedMediaFragment.javaClass.name)
+                .addToBackStack(FeaturedMediaFragment::class.java.name)
                 .commit()
         }
 

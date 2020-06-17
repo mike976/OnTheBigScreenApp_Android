@@ -112,19 +112,20 @@ class FeaturedMediaFragment : Fragment() {
             }
         })
 
-        viewModel.getTrendingTvShows()?.observe(this, Observer<ApiResponseMessage<List<TvShow>>> { responseMessage ->
+        viewModel.getTrendingTvShows()
+            .observe(this, Observer<ApiResponseMessage<List<TvShow>>> { responseMessage ->
 
-            if(responseMessage?.statusApi == ApiResponseStatus.SUCCESS && responseMessage.data != null) {
-                val tvShows = responseMessage.data
+                if(responseMessage?.statusApi == ApiResponseStatus.SUCCESS && responseMessage.data != null) {
+                    val tvShows = responseMessage.data
 
-                featuredAdapter.updateTrendingTvShows(tvShows)
+                    featuredAdapter.updateTrendingTvShows(tvShows)
 
-            } else {
-                if (responseMessage?.error == ApiError.TRENDING_TVSHOWS) {
-                    Toast.makeText(context, "Trending Tv Shows not found", Toast.LENGTH_SHORT).show()
+                } else {
+                    if (responseMessage?.error == ApiError.TRENDING_TVSHOWS) {
+                        Toast.makeText(context, "Trending Tv Shows not found", Toast.LENGTH_SHORT).show()
+                    }
                 }
-            }
-        })
+            })
     }
 
     private fun pagingfix() {

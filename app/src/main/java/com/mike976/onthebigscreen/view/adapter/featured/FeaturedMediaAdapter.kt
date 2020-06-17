@@ -33,7 +33,7 @@ class FeaturedMediaAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<*> {
 
-        return when (viewType){
+        when (viewType){
             TYPE_HEADER -> {
                 val viewHolder = FeaturedHeaderViewHolder(parent.inflate(R.layout.list_item_featured_media_header))
                 return viewHolder
@@ -76,6 +76,7 @@ class FeaturedMediaAdapter(
                 FeaturedCategory.Upcoming -> holder.updateFeaturedMedia(this.featuredUpComing)
                 FeaturedCategory.TrendingMovies -> holder.updateFeaturedMedia(this.featuredTrendingMovies)
                 FeaturedCategory.TrendingTv -> holder.updateFeaturedMedia(this.featuredTrendingTvShows)
+                FeaturedCategory.Unknown -> {}
             }
         }
     }
@@ -129,7 +130,7 @@ class FeaturedMediaAdapter(
                         this.featuredCategory
                     )
                 )
-                    .addToBackStack(FeaturedMediaFragment.javaClass.name)
+                    .addToBackStack(FeaturedMediaFragment::class.java.name)
                     .commit()
 
             }

@@ -65,26 +65,20 @@ class MediaDetailFragment(private val media: Media) : Fragment() {
         val includedLayout = view?.findViewById<View>(R.id.included_cast_crew_production_layout)
         val productionRecyclerView =
             includedLayout?.findViewById<View>(R.id.production_list) as RecyclerView
-        val castRecyclerView = includedLayout?.findViewById<View>(R.id.cast_list) as RecyclerView
-        val crewRecyclerView = includedLayout?.findViewById<View>(R.id.crew_list) as RecyclerView
+        val castRecyclerView = includedLayout.findViewById<View>(R.id.cast_list) as RecyclerView
+        val crewRecyclerView = includedLayout.findViewById<View>(R.id.crew_list) as RecyclerView
 
-        if (productionRecyclerView != null) {
-            productionRecyclerView.layoutManager =
-                LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-            productionRecyclerView.adapter = productionCompanyAdapter
-        }
+        productionRecyclerView.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        productionRecyclerView.adapter = productionCompanyAdapter
 
-        if (castRecyclerView != null) {
-            castRecyclerView.layoutManager =
-                LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-            castRecyclerView.adapter = mediaCastAdapter
-        }
+        castRecyclerView.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        castRecyclerView.adapter = mediaCastAdapter
 
-        if (crewRecyclerView != null) {
-            crewRecyclerView.layoutManager =
-                LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-            crewRecyclerView.adapter = mediaCrewAdapter
-        }
+        crewRecyclerView.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        crewRecyclerView.adapter = mediaCrewAdapter
     }
 
 
@@ -93,13 +87,9 @@ class MediaDetailFragment(private val media: Media) : Fragment() {
         //backdrop & poster images
         activity?.let {
             val progressDrawable = getProgressDrawable(it)
-            if(media.backdropPath != null) {
-                image_banner.loadImage(media.backdropUrl, progressDrawable)
-            }
+            image_banner.loadImage(media.backdropUrl, progressDrawable)
 
-            if(media.posterPath != null) {
-                poster_banner.loadImage(media.posterUrl, progressDrawable)
-            }
+            poster_banner.loadImage(media.posterUrl, progressDrawable)
         }
 
         backdropTitleTextView.text = this.media.title
@@ -143,7 +133,7 @@ class MediaDetailFragment(private val media: Media) : Fragment() {
             if(responseMessage?.statusApi == ApiResponseStatus.SUCCESS && responseMessage.data != null) {
                 val data = responseMessage.data
 
-                val first = data.appendedVideos.results?.firstOrNull()
+                val first = data.appendedVideos.results.firstOrNull()
                 if(first != null) {
                     trailerAdapter.updateTrailers(mutableListOf(first))
                 }

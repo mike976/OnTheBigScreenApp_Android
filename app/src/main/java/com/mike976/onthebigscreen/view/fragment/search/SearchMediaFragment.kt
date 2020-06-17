@@ -81,7 +81,7 @@ class SearchMediaFragment : Fragment() {
 
         })
 
-        searchEditText.setOnEditorActionListener { v, actionId, event ->
+        searchEditText.setOnEditorActionListener { _, actionId, _ ->
 
             val x  = when (actionId) {
                 EditorInfo.IME_ACTION_SEARCH -> {
@@ -115,9 +115,7 @@ class SearchMediaFragment : Fragment() {
                 val searchResults = responseMessage.data
                 println("Mike " + searchResults.size)
 
-                if(searchResults != null) {
-                    adapter.updateSearchResults(searchResults)
-                }
+                adapter.updateSearchResults(searchResults)
 
             } else {
                 if (responseMessage?.error == ApiError.SEARCH_MOVIES) {
@@ -147,7 +145,7 @@ class SearchMediaFragment : Fragment() {
     fun hideActionBar() {
         try {
             val activity = view?.context as AppCompatActivity
-            activity?.supportActionBar!!.hide()
+            activity.supportActionBar!!.hide()
         } catch (e: Exception) {
         }
     }
