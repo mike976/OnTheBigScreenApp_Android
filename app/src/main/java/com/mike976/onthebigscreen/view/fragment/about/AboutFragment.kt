@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.onthebigscreen.BuildConfig
 import com.example.onthebigscreen.R
 import com.mike976.onthebigscreen.util.getProgressDrawable
 import kotlinx.android.synthetic.main.fragment_about.*
@@ -24,6 +25,11 @@ class AboutFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         loadImages()
+
+        val versionCode = BuildConfig.VERSION_CODE
+        val versionName = BuildConfig.VERSION_NAME
+
+        buildVersion.text = "On the Big Screen v$versionName build $versionCode"
 
     }
 
