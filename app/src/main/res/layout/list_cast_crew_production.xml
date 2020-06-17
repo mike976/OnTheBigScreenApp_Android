@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="40dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <View
@@ -39,10 +40,9 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/cast_list"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@android:color/holo_blue_bright"
         app:layout_constraintTop_toBottomOf="@+id/line_below_cast_title" />
 
     <View
@@ -79,10 +79,9 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/crew_list"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@android:color/holo_blue_bright"
         app:layout_constraintTop_toBottomOf="@+id/line_below_crew_title" />
 
     <View
@@ -120,9 +119,11 @@
         android:id="@+id/production_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="40dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/line_below_production_title" />
+        app:layout_constraintTop_toBottomOf="@+id/line_below_production_title"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,12 +2,14 @@
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="5dp"
     android:background="@color/colorPrimaryDark">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp">
 
         <TextView
             android:id="@+id/backdropTitleTextView"
@@ -38,7 +40,7 @@
             android:id="@+id/list_trailers"
             android:layout_width="match_parent"
             android:layout_height="170dp"
-            android:layout_marginTop="120dp"
+            android:layout_marginTop="130dp"
             android:background="@android:color/transparent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -53,6 +55,7 @@
             android:layout_marginLeft="15dp"
             android:layout_marginTop="24dp"
             android:layout_marginRight="15dp"
+            android:layout_marginBottom="40dp"
             app:cardBackgroundColor="@android:color/white"
             app:cardCornerRadius="10dp"
             app:cardElevation="0dp"
@@ -68,6 +71,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
+                android:layout_marginBottom="40dp"
                 android:paddingLeft="8dp"
                 android:paddingTop="15dp">
 
@@ -155,8 +159,9 @@
                     android:id="@+id/included_cast_crew_production_layout"
                     layout="@layout/list_cast_crew_production"
                     android:layout_width="match_parent"
-                    android:layout_height="600dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
+                    android:layout_marginBottom="40dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/overview" />
 
@@ -166,19 +171,6 @@
 
         </androidx.cardview.widget.CardView>
 
-<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--            android:id="@+id/fav_view"-->
-<!--            android:layout_width="120dp"-->
-<!--            android:layout_height="170dp"-->
-<!--            android:layout_marginTop="200dp"-->
-<!--            android:layout_marginRight="15dp"-->
-<!--            -->
-<!--            app:layout_constraintRight_toRightOf="@+id/media_detail_card"-->
-<!--            app:layout_constraintTop_toTopOf="parent"-->
-<!--            app:layout_editor_absoluteX="310dp"-->
-<!--            app:layout_editor_absoluteY="320dp">-->
-
-
             <androidx.cardview.widget.CardView
                 app:layout_constraintRight_toRightOf="@+id/media_detail_card"
                 app:layout_constraintTop_toTopOf="parent"
@@ -186,7 +178,7 @@
                 app:layout_editor_absoluteY="320dp"
                 android:layout_width="120dp"
                 android:layout_height="170dp"
-                android:layout_marginTop="200dp"
+                android:layout_marginTop="220dp"
                 android:layout_marginRight="15dp"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="20dp"
@@ -195,6 +187,7 @@
                 android:background="@android:color/transparent">
 
                 <ImageView
+                    android:padding="5dp"
                 android:id="@+id/poster_banner"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -204,7 +197,6 @@
             </androidx.cardview.widget.CardView>
 
 
-<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

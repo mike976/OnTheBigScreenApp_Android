@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -19,6 +18,8 @@ import com.example.onthebigscreen.network.ApiResponseStatus
 import com.mike976.onthebigscreen.util.applyRoundedCorners
 import com.mike976.onthebigscreen.util.getProgressDrawable
 import com.mike976.onthebigscreen.util.loadImage
+import com.mike976.onthebigscreen.view.adapter.media.MediaCastAdapter
+import com.mike976.onthebigscreen.view.adapter.media.MediaCrewAdapter
 import com.mike976.onthebigscreen.view.adapter.media.MediaProductionAdapter
 import com.mike976.onthebigscreen.view.adapter.media.MediaTrailerAdapter
 import com.mike976.onthebigscreen.viewmodel.MainViewModel
@@ -29,15 +30,10 @@ import java.time.format.DateTimeFormatter
 
 class MediaDetailFragment(private val media: Media) : Fragment() {
 
-//    companion object {
-//        fun newInstance() =
-//            MediaDetailFragment(
-//                Media()
-//            )
-//    }
-
     private val trailerAdapter = MediaTrailerAdapter(mutableListOf())
     private val productionCompanyAdapter = MediaProductionAdapter(mutableListOf())
+    private val mediaCastAdapter = MediaCastAdapter(mutableListOf())
+    private val mediaCrewAdapter = MediaCrewAdapter(mutableListOf())
 
     private lateinit var viewModel: MainViewModel
 
@@ -52,21 +48,43 @@ class MediaDetailFragment(private val media: Media) : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = activity?.let { ViewModelProviders.of(it).get(MainViewModel::class.java) }!!
 
-        list_trailers.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        list_trailers.adapter = trailerAdapter
-
-
-        val includedLayout = view?.findViewById<View>(R.id.included_cast_crew_production_layout)
-        val productionRecyclerView = includedLayout?.findViewById<View>(R.id.production_list) as RecyclerView
-
-        if(productionRecyclerView != null) {
-            productionRecyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-            productionRecyclerView.adapter = productionCompanyAdapter
-        }
+        buildRecyclerViews()
 
         loadMedia()
         loadMediaDetail()
+        loadMediaCredits()
 
+    }
+
+    private fun buildRecyclerViews() {
+
+        list_trailers.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        list_trailers.adapter = trailerAdapter
+
+        val includedLayout = view?.findViewById<View>(R.id.included_cast_crew_production_layout)
+        val productionRecyclerView =
+            includedLayout?.findViewById<View>(R.id.production_list) as RecyclerView
+        val castRecyclerView = includedLayout?.findViewById<View>(R.id.cast_list) as RecyclerView
+        val crewRecyclerView = includedLayout?.findViewById<View>(R.id.crew_list) as RecyclerView
+
+        if (productionRecyclerView != null) {
+            productionRecyclerView.layoutManager =
+                LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+            productionRecyclerView.adapter = productionCompanyAdapter
+        }
+
+        if (castRecyclerView != null) {
+            castRecyclerView.layoutManager =
+                LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+            castRecyclerView.adapter = mediaCastAdapter
+        }
+
+        if (crewRecyclerView != null) {
+            crewRecyclerView.layoutManager =
+                LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+            crewRecyclerView.adapter = mediaCrewAdapter
+        }
     }
 
 
@@ -89,17 +107,16 @@ class MediaDetailFragment(private val media: Media) : Fragment() {
         overview.text = this.media.overview
 
         //release date
+        var releaseDate: LocalDate? = null
+
         if(this.media.mediaType == MediaType.Movie) {
-            val releaseDate = LocalDate.parse(this.media.releaseDate)
-            releaseDate.format(DateTimeFormatter.ofPattern("yyyy"))
-            releaseYear.text = releaseDate.year.toString()
+            releaseDate = LocalDate.parse(this.media.releaseDate)
+        } else if(this.media.mediaType == MediaType.TVShow) {
+            releaseDate = LocalDate.parse(this.media.firstAirDate)
         }
 
-        if(this.media.mediaType == MediaType.TVShow) {
-            val firstAirDate = LocalDate.parse(this.media.firstAirDate)
-            firstAirDate.format(DateTimeFormatter.ofPattern("yyyy"))
-            releaseYear.text = firstAirDate.year.toString()
-        }
+        releaseDate?.format(DateTimeFormatter.ofPattern("yyyy"))
+        releaseYear.text = releaseDate?.year.toString()
 
         //apply ratings
         ratingsBar.rating = (this.media.voteAverage * 5 / 10)
@@ -135,15 +152,29 @@ class MediaDetailFragment(private val media: Media) : Fragment() {
 
             } else {
                 if (responseMessage?.error == ApiError.MOVIEDETAIL) {
-                    Toast.makeText(context, "Movie not found", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "Media Detail not found", Toast.LENGTH_SHORT).show()
                 }
             }
         })
-
-        //TODO call and observer getMovieCredits if mediaType is movie
-        //TODO call and observer getMovieCredits if mediaType is tvShow
     }
 
+    private fun loadMediaCredits () {
+        viewModel.getMediaCredits(this.media.id, this.media.mediaType)
+            ?.observe(this, Observer { responseMessage ->
+
+                if (responseMessage?.statusApi == ApiResponseStatus.SUCCESS && responseMessage.data != null) {
+                    val data = responseMessage.data
+
+                    mediaCastAdapter.updateCastList(data.cast)
+                    mediaCrewAdapter.updateCrewList(data.crew)
 
 
+                } else {
+                    if (responseMessage?.error == ApiError.MOVIECREDITS) {
+                        Toast.makeText(context, "Media credits not found", Toast.LENGTH_SHORT)
+                            .show()
+                    }
+                }
+            })
+    }
 }

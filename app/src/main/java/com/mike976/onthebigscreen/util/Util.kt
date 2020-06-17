@@ -28,8 +28,8 @@ fun getProgressDrawable(context: Context) : CircularProgressDrawable {
 fun ImageView.loadImage(uri: String?, progressDrawable: CircularProgressDrawable) {
     val options = RequestOptions()
         .placeholder(progressDrawable)
-        .fallback(R.drawable.ic_baseline_broken_image_24)
-        .error(R.drawable.ic_baseline_broken_image_24)
+        .fallback(R.drawable.media_placeholder)
+        .error(R.drawable.media_placeholder)
 
         //.fallback(ColorDrawable(R.color.colorPrimary.toInt()))
 
