@@ -16,7 +16,16 @@ v1.2 is now available for download on your Android devices
 
 On the Big Screen is built using Kotlin 1.3.72 and Android Studio 4
 
+## Download
+
+<a href="https://play.google.com/store/apps/details?id=com.mike976.onthebigscreen">
+  <img alt="Android app on Google Play" src="https://developer.android.com/images/brand/en_app_rgb_wo_45.png" />
+</a>
+
+<br />
+
 <p>
+   
    <img src="https://user-images.githubusercontent.com/63581689/85455089-7bccdf00-b595-11ea-97f7-54e10cb803ca.png" width="210">
    
    <img src="https://user-images.githubusercontent.com/63581689/85455128-84251a00-b595-11ea-8982-42947b130607.png" width="210">
