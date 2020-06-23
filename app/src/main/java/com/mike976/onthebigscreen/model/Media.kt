@@ -6,10 +6,10 @@ import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
 open class Media (
-    val id: Int = 0,
-    val overview: String = "",
+    @SerializedName("id") val id: Int = 0,
+    @SerializedName("overview") val overview: String = "",
     @SerializedName("name") val name: String = "",
-    @SerializedName("title") val _title: String = "",
+    @SerializedName("title") var _title: String = "",
     @SerializedName("first_air_date") val firstAirDate: String = "",
     @SerializedName("release_date") val releaseDate: String = "",
     @SerializedName("poster_path") val posterPath: String = "",

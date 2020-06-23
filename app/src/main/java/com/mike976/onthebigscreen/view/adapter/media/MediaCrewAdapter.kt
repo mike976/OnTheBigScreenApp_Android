@@ -38,9 +38,7 @@ class MediaCrewAdapter(private val crewList: MutableList<Crew>) : RecyclerView.A
 
             itemView.nameTextView.text = crew.name
             itemView.infoTextView.text = crew.job
-            if (crew.profilePath != null) {
-                itemView.photoImage.loadImage(crew.profilePathUrl, progressDrawable)
-            }
+            itemView.photoImage.loadImage(crew.profilePathUrl, progressDrawable)
         }
     }
 }

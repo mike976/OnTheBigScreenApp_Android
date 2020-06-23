@@ -62,7 +62,7 @@ class FeaturedMediaCategoryFragment(val featuredCategory: FeaturedCategory) : Fr
         }
 
         var pagedList = getPagedListByCategory(featuredCategory)
-        pagedList.observe(this, Observer {
+        pagedList?.observe(this, Observer {
 
             adapter.submitList(it)
         })
@@ -73,7 +73,7 @@ class FeaturedMediaCategoryFragment(val featuredCategory: FeaturedCategory) : Fr
         super.onDestroyView()
     }
 
-    private fun getPagedListByCategory(featuredCategory: FeaturedCategory): LiveData<PagedList<Media>> {
+    private fun getPagedListByCategory(featuredCategory: FeaturedCategory): LiveData<PagedList<Media>>? {
         return when(featuredCategory) {
             FeaturedCategory.TrendingTv -> viewModel.trendingTvShowsPagedList
             FeaturedCategory.NowPlaying -> viewModel.nowPlayingMoviesPagedList

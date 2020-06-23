@@ -37,9 +37,8 @@ class MediaCastAdapter(private val castList: MutableList<Cast>) : RecyclerView.A
         fun bind(cast: Cast) {
             itemView.nameTextView.text = cast.name
             itemView.infoTextView.text = "as ${cast.character}"
-            if (cast.profilePath != null) {
-                itemView.photoImage.loadImage(cast.profilePathUrl, progressDrawable)
-            }
+            itemView.photoImage.loadImage(cast.profilePathUrl, progressDrawable)
+
         }
     }
 

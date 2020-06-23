@@ -131,13 +131,13 @@ class FeaturedMediaFragment : Fragment() {
     private fun pagingfix() {
 
         //TODO Refactor this - needed as workaround issue for paginglibrary no observing on first instance of featuredCategory fragment
-        viewModel.nowPlayingMoviesPagedList.observe(this, Observer<PagedList<Media>> {
+        viewModel.nowPlayingMoviesPagedList?.observe(this, Observer<PagedList<Media>> {
         })
-        viewModel.upComingMoviesPagedList.observe(this, Observer<PagedList<Media>> {
+        viewModel.upComingMoviesPagedList?.observe(this, Observer<PagedList<Media>> {
         })
-        viewModel.trendingTvShowsPagedList.observe(this, Observer<PagedList<Media>> {
+        viewModel.trendingTvShowsPagedList?.observe(this, Observer<PagedList<Media>> {
         })
-        viewModel.trendingMoviesPagedList.observe(this, Observer<PagedList<Media>> {
+        viewModel.trendingMoviesPagedList?.observe(this, Observer<PagedList<Media>> {
         })
     }
 

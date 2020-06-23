@@ -11,16 +11,17 @@ android {
         applicationId "com.mike976.onthebigscreen"
         minSdkVersion 26
         targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "1.2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
         release {
-            minifyEnabled true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            debuggable false
         }
     }
 }
@@ -32,6 +33,7 @@ dependencies {
     implementation 'androidx.paging:paging-runtime-ktx:2.1.2'
     def glideVersion = '4.8.0'
     def pagingVersion = "1.0.0"
+    def mockitoVersion = '2.11.0'
 
     //SUPPORT
     implementation fileTree(dir: "libs", include: ["*.jar"])
@@ -79,6 +81,11 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
+    //YOUTUBE PLAYER
     implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:chromecast-sender:0.23'
+
+    //MOCKITO
+    testImplementation "org.mockito:mockito-inline:$mockitoVersion"
+    testImplementation 'android.arch.core:core-testing:1.1.1'
 
 }
