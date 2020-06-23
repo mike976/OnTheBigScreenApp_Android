@@ -12,8 +12,12 @@ Features coming soon include:
 
 v1.2 is now available for download on your Android devices 
 
+## 🔎 About
 
-Dependencies
+On the Big Screen is built using Kotlin 1.3.72 and Android Studio 4
+
+
+## Dependencies
 - Dagger 2 - constructor and field dependency injectioR
 - Retrofit - networking calls to TmDB Rest API
 - Jetpack Paging Library - infinite scrolling to recycler view
@@ -29,10 +33,6 @@ Dependencies
 - Unit Tests
 - Mockito
 
-
-## 🔎 About
-
-On the Big Screen is built using Kotlin 1.3.72 and Android Studio 4
 
 ## 🔧 Usage
 
