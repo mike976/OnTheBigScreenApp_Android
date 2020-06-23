@@ -18,8 +18,11 @@ On the Big Screen is built using Kotlin 1.3.72 and Android Studio 4
 
 <p>
    <img src="https://user-images.githubusercontent.com/63581689/85455089-7bccdf00-b595-11ea-97f7-54e10cb803ca.png" width="210">
+   
    <img src="https://user-images.githubusercontent.com/63581689/85455128-84251a00-b595-11ea-8982-42947b130607.png" width="210">
+   
    <img src="https://user-images.githubusercontent.com/63581689/85455181-91420900-b595-11ea-9588-dfddb4d29823.png" width="210">
+   
    <img src="https://user-images.githubusercontent.com/63581689/85455191-92733600-b595-11ea-9a6d-de7ce4e56f25.png" width="210">
 </p>
 
