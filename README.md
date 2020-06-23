@@ -10,7 +10,7 @@ Features coming soon include:
 - Search by Genre and Actor
 - Explore related movies and tv shows by Actor
 
-v1.2 is now available for download on your iOS devices 
+v1.2 is now available for download on your Android devices 
 
 
 Dependencies
