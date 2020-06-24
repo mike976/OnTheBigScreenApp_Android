@@ -36,19 +36,12 @@ On the Big Screen is built using Kotlin 1.3.72 and Android Studio 4
 </p>
 
 ## Dependencies
-- Dagger 2 - constructor and field dependency injectioR
-- Retrofit - networking calls to TmDB Rest API
-- Jetpack Paging Library - infinite scrolling to recycler view
-- LiveData - observing and appliying realtime updates to UI
-
-- MVVM architecture - main state when activity is rebuilt
+- Dagger 2
+- Retrofit
+- Jetpack Paging Library
+- LiveData
 - YouTubePlayerView 3rd party control
-- Single Activity
-- Fragments
-- RecyclerViews
-- ConstraintLayouts
-
-- Unit Tests
+- Glide
 - Mockito
 
 
@@ -66,3 +59,17 @@ Michael Bullock - <mikebullock976@gmail.com>
 ## App Design
 
 v1.2 - from development time to release = 2 weeks
+
+- Interface based design
+- Dependency constructor & field injection via Dagger 2
+- Implementation follows the MVVM design pattern
+- Use of Restful API with back-end services #themoviedb
+- Single Activity app 
+- UI made up of Fragments
+- Use of RecyclerViews - Featured Page is combination of horizontal and vertical linear layouts reflecting a App Store style UI page
+- ConstraintLayouts - UI views are constrained by there counterparts
+- Infinite scrolling and pagination implemented for the Featured Category pages
+- Unit Tests implemented with mocks via Mockito
+
+
+
