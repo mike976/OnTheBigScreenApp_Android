@@ -41,6 +41,7 @@ On the Big Screen is built using Kotlin 1.3.72 and Android Studio 4
 - Jetpack Paging Library
 - LiveData
 - YouTubePlayerView 3rd party control
+- StrRatingsControl
 - Glide
 - Mockito
 
